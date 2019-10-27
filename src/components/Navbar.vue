@@ -7,12 +7,18 @@
             class="nav-item nav-link"
             :class="{ 'active': isRoute('') }"
             :to="{ name: 'welcome'}"
-          >Välkommen</router-link>
+          >
+            Välkommen
+            <i class="fas fa-child"></i>
+          </router-link>
           <router-link
             class="nav-item nav-link"
             :class="{ 'active': isRoute('/hitta') }"
             :to="{ name: 'find'}"
-          >Hitta</router-link>
+          >
+            Hitta
+            <i class="fas fa-map-marked-alt"></i>
+          </router-link>
         </div>
       </div>
     </nav>
