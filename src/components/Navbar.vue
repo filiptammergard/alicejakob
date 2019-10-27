@@ -1,18 +1,14 @@
 <template>
   <div id="navbar-component">
-    <nav class="navbar navbar-expand navbar-dark navbar-custom shadow">
+    <nav class="navbar navbar-expand navbar-light shadow">
       <div class="container">
         <div class="navbar-nav">
-          <router-link
-            class="nav-item nav-link"
-            :class="{ 'active': isRoute('') }"
-            :to="{ name: 'welcome'}"
-          >
+          <router-link class="nav-link" :class="{ 'active': isRoute('') }" :to="{ name: 'welcome'}">
             Välkommen
             <i class="fas fa-child"></i>
           </router-link>
           <router-link
-            class="nav-item nav-link"
+            class="nav-link"
             :class="{ 'active': isRoute('/hitta') }"
             :to="{ name: 'find'}"
           >

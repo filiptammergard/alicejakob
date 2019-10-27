@@ -1,7 +1,11 @@
 <template>
   <div id="welcome-component">
-    <h1>Wohooo!</h1>
-    <p>Vi säger JA till att vara värdar på ert bröllop!</p>
+    <h1>
+      <i class="fas fa-heart"></i>
+      Wohooo!
+      <i class="fas fa-heart"></i>
+    </h1>
+    <p>Vi säger så klart JA till att vara värdar på ert bröllop!</p>
     <p>(Och vi fixar gärna en bröllopshemsida om ni vill!)</p>
   </div>
 </template>
