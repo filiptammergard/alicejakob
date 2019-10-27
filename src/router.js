@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import Welcome from "./views/Welcome";
+import Find from "./views/Find";
 
 Vue.use(Router);
 
@@ -13,7 +14,15 @@ const router = new Router({
       name: "welcome",
       component: Welcome,
       meta: {
-        title: "Välkommen"
+        title: "Välkommen | Alice & Jakob"
+      }
+    },
+    {
+      path: "/hitta",
+      name: "find",
+      component: Find,
+      meta: {
+        title: "Hitta | Alice & Jakob"
       }
     }
   ]
@@ -48,7 +57,7 @@ const router = new Router({
 // });
 
 router.afterEach(to => {
-  const defaultPageTitle = "Önskelista";
+  const defaultPageTitle = "Alice & Jakob";
   document.title = to.meta.title || defaultPageTitle;
 });
 
