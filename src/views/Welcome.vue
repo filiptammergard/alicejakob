@@ -1,12 +1,15 @@
 <template>
-  <div id="welcome-view">
-    <h1>Wohoooo!</h1>
-    <p>Vi säger JA till att vara värdar på ert bröllop!</p>
+  <div id="welcome-view" class="container">
+    <Welcome />
   </div>
 </template>
 
 <script>
+import Welcome from "../components/Welcome";
 export default {
-  name: "Welcome"
+  name: "welcome-view",
+  components: {
+    Welcome
+  }
 };
 </script>
