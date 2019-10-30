@@ -1,5 +1,10 @@
 @import "settings";
+@import "navbar";
 
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: 1rem;
+}
 h1 {
   font-family: "Stalemate", cursive;
   font-size: 4rem;
@@ -11,15 +16,4 @@ h2 {
 p {
   font-family: "Open Sans", sans-serif;
   font-family: 1rem;
-}
-nav {
-  border-bottom: 2px solid black;
-
-  &.navbar-light .navbar-nav .nav-link.active {
-    font-weight: 700;
-
-    i {
-      color: $primary-color;
-    }
-  }
 }

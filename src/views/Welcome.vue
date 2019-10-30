@@ -6,6 +6,7 @@
 
 <script>
 import Welcome from "../components/Welcome";
+
 export default {
   name: "welcome-view",
   components: {

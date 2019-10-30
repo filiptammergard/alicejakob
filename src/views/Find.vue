@@ -6,6 +6,7 @@
 
 <script>
 import Find from "../components/Find";
+
 export default {
   name: "find-view",
   components: {

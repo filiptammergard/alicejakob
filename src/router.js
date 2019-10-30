@@ -3,6 +3,10 @@ import Router from "vue-router";
 
 import Welcome from "./views/Welcome";
 import Find from "./views/Find";
+import Accomodation from "./views/Accomodation";
+import Wishlist from "./views/Wishlist";
+import OSA from "./views/OSA";
+import Contact from "./views/Contact";
 
 Vue.use(Router);
 
@@ -23,6 +27,38 @@ const router = new Router({
       component: Find,
       meta: {
         title: "Hitta | Alice & Jakob"
+      }
+    },
+    {
+      path: "/boende",
+      name: "accomodation",
+      component: Accomodation,
+      meta: {
+        title: "Boende | Alice & Jakob"
+      }
+    },
+    {
+      path: "/önskelista",
+      name: "wishlist",
+      component: Wishlist,
+      meta: {
+        title: "Önskelista | Alice & Jakob"
+      }
+    },
+    {
+      path: "/osa",
+      name: "osa",
+      component: OSA,
+      meta: {
+        title: "O.S.A | Alice & Jakob"
+      }
+    },
+    {
+      path: "/kontakt",
+      name: "contact",
+      component: Contact,
+      meta: {
+        title: "Kontakt | Alice & Jakob"
       }
     }
   ]
