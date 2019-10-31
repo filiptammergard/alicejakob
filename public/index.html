@@ -30,8 +30,63 @@
         din webbläsare.</strong
       >
     </noscript>
-    <form name="talanmälan" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
+    <form
+      name="talanmälan"
+      method="POST"
+      id="talanmälan"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="talanmälan" />
+      <div class="form-row">
+        <div class="col-md">
+          <b>För- och efternamn*</b>
+          <input type="text" class="form-control" name="För- och efternamn" required />
+        </div>
+        <div class="col-md">
+          <b>Mejladress*</b>
+          <input type="email" class="form-control" name="Mejladress" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md">
+          <b>Relation till brudparet*</b>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Till exempel brudparet gammelfarbror"
+            name="Relation till brudparet"
+            required
+          />
+        </div>
+        <div class="col-md">
+          <b>Ungefärlig tidsåtgång*</b>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Svara i antal minuter"
+            name="Ungefärlig tidsåtgång"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md">
+          <b>Hjälpmedel</b>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Till exempel projektor"
+            name="Hjälpmedel"
+          />
+        </div>
+        <div class="col-md">
+          <b>Övriga önskemål</b>
+          <input type="text" class="form-control" name="Övriga önskemål" />
+        </div>
+      </div>
+      <button class="btn btn-secondary btn-block" type="submit">Skicka</button>
     </form>
     <div id="app"></div>
   </body>
