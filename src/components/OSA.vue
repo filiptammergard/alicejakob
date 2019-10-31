@@ -130,6 +130,7 @@
       </div>
       <button class="btn btn-secondary btn-block" type="submit">Anmäl</button>
     </form>
+    <br />
     <p>Fält markerade med * är obligatoriska och måste fyllas i.</p>
   </div>
 </template>
