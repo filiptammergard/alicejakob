@@ -88,6 +88,137 @@
       </div>
       <button class="btn btn-secondary btn-block" type="submit">Skicka</button>
     </form>
+    <form
+      name="anmälan"
+      method="POST"
+      action="/tack"
+      netlify
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="anmälan" />
+      <b for>Svar*</b>
+      <div class="form-row">
+        <div class="col-md">
+          <div class="form-check">
+            <input
+              v-model="isComing"
+              class="form-check-input"
+              type="radio"
+              name="Svar"
+              id="option1"
+              value="true"
+            />
+            <label class="form-check-label" for="option1">Jag kommer</label>
+          </div>
+          <div class="form-check">
+            <input
+              v-model="isComing"
+              class="form-check-input"
+              type="radio"
+              name="Svar"
+              id="option2"
+              value="false"
+            />
+            <label class="form-check-label" for="option2">Jag kan tyvärr inte komma</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md">
+          <b>För- och efternamn*</b>
+          <input type="text" name="För- och efternamn" class="form-control" />
+        </div>
+        <div class="col-md">
+          <b>Mejladress*</b>
+          <input type="text" name="Mejladress" class="form-control" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md">
+          <b>Matpreferenser</b>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="Vegetarisk"
+              id="foodOption1"
+              :disabled="isComing == 'false'"
+            />
+            <label class="form-check-label" for="foodOption1">Vegetarisk</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="Vegansk"
+              value
+              id="foodOption2"
+              :disabled="isComing == 'false'"
+            />
+            <label class="form-check-label" for="foodOption2">Vegansk</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="Glutenfri"
+              value
+              id="foodOption3"
+              :disabled="isComing == 'false'"
+            />
+            <label class="form-check-label" for="foodOption3">Glutenfri</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="Laktosfri"
+              value
+              id="foodOption4"
+              :disabled="isComing == 'false'"
+            />
+            <label class="form-check-label" for="foodOption4">Laktosfri</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="Mjölkfri"
+              value
+              id="foodOption5"
+              :disabled="isComing == 'false'"
+            />
+            <label class="form-check-label" for="foodOption5">Mjölkfri</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <b>Övriga matpreferenser</b>
+          <input
+            type="text"
+            name="Övriga matpreferenser"
+            class="form-control"
+            :disabled="isComing == 'false'"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md">
+          <b>Övriga upplysningar</b>
+          <textarea
+            class="form-control"
+            name="Övriga upplysningar"
+            rows="3"
+            :disabled="isComing == 'false'"
+          ></textarea>
+        </div>
+        <div class="col-md">
+          <b>Hälsning till brudparet</b>
+          <textarea class="form-control" name="Hälsning till brudparet" rows="3"></textarea>
+        </div>
+      </div>
+      <button class="btn btn-secondary btn-block" type="submit">Anmäl</button>
+    </form>
     <div id="app"></div>
   </body>
 </html>

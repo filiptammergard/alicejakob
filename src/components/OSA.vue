@@ -5,7 +5,8 @@
       I det här formuläret kan du som har fått en inbjudan i brevlådan meddela om du kan komma eller inte på bröllopsfesten. Om du inte kan komma vill vi veta även det, men då går det också bra att meddela det på något annat sätt om det känns smidigare. Om du upplever att formuläret är knepigt går det även att höra av sig till värdarna på annat sätt i fliken
       <router-link :to="{ name: 'contact' }">Kontakt</router-link>.
     </p>
-    <form>
+    <form name="anmälan" method="POST" action="/tack" netlify data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="anmälan" />
       <b for>Svar*</b>
       <div class="form-row">
         <div class="col-md">
@@ -14,7 +15,7 @@
               v-model="isComing"
               class="form-check-input"
               type="radio"
-              name="osa"
+              name="Svar"
               id="option1"
               value="true"
             />
@@ -25,7 +26,7 @@
               v-model="isComing"
               class="form-check-input"
               type="radio"
-              name="osa"
+              name="Svar"
               id="option2"
               value="false"
             />
@@ -36,11 +37,11 @@
       <div class="form-row">
         <div class="col-md">
           <b>För- och efternamn*</b>
-          <input type="text" class="form-control" />
+          <input type="text" name="För- och efternamn" class="form-control" />
         </div>
         <div class="col-md">
           <b>Mejladress*</b>
-          <input type="text" class="form-control" />
+          <input type="text" name="Mejladress" class="form-control" />
         </div>
       </div>
       <div class="form-row">
@@ -50,7 +51,7 @@
             <input
               class="form-check-input"
               type="checkbox"
-              value
+              name="Vegetarisk"
               id="foodOption1"
               :disabled="isComing == 'false'"
             />
@@ -60,6 +61,7 @@
             <input
               class="form-check-input"
               type="checkbox"
+              name="Vegansk"
               value
               id="foodOption2"
               :disabled="isComing == 'false'"
@@ -70,6 +72,7 @@
             <input
               class="form-check-input"
               type="checkbox"
+              name="Glutenfri"
               value
               id="foodOption3"
               :disabled="isComing == 'false'"
@@ -80,6 +83,7 @@
             <input
               class="form-check-input"
               type="checkbox"
+              name="Laktosfri"
               value
               id="foodOption4"
               :disabled="isComing == 'false'"
@@ -90,6 +94,7 @@
             <input
               class="form-check-input"
               type="checkbox"
+              name="Mjölkfri"
               value
               id="foodOption5"
               :disabled="isComing == 'false'"
@@ -99,17 +104,27 @@
         </div>
         <div class="col-md">
           <b>Övriga matpreferenser</b>
-          <input type="text" class="form-control" :disabled="isComing == 'false'" />
+          <input
+            type="text"
+            name="Övriga matpreferenser"
+            class="form-control"
+            :disabled="isComing == 'false'"
+          />
         </div>
       </div>
       <div class="form-row">
         <div class="col-md">
           <b>Övriga upplysningar</b>
-          <textarea class="form-control" rows="3" :disabled="isComing == 'false'"></textarea>
+          <textarea
+            class="form-control"
+            name="Övriga upplysningar"
+            rows="3"
+            :disabled="isComing == 'false'"
+          ></textarea>
         </div>
         <div class="col-md">
           <b>Hälsning till brudparet</b>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" name="Hälsning till brudparet" rows="3"></textarea>
         </div>
       </div>
       <button class="btn btn-secondary btn-block" type="submit">Anmäl</button>
