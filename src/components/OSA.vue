@@ -16,10 +16,10 @@
               class="form-check-input"
               type="radio"
               name="Svar"
-              id="option1"
+              id="Ja"
               value="Jag kommer"
             />
-            <label class="form-check-label" for="option1">Jag kommer</label>
+            <label class="form-check-label" for="Ja">Jag kommer</label>
           </div>
           <div class="form-check">
             <input
@@ -27,10 +27,10 @@
               class="form-check-input"
               type="radio"
               name="Svar"
-              id="option2"
+              id="Nej"
               value="Jag kan tyvärr inte komma"
             />
-            <label class="form-check-label" for="option2">Jag kan tyvärr inte komma</label>
+            <label class="form-check-label" for="Nej">Jag kan tyvärr inte komma</label>
           </div>
         </div>
       </div>
@@ -53,10 +53,10 @@
               type="checkbox"
               name="Vegetarisk"
               value="Ja"
-              id="foodOption1"
-              :disabled="isComing == 'false'"
+              id="Vegetarisk"
+              :disabled="isComing == 'Jag kan tyvärr inte komma'"
             />
-            <label class="form-check-label" for="foodOption1">Vegetarisk</label>
+            <label class="form-check-label" for="Vegetarisk">Vegetarisk</label>
           </div>
           <div class="form-check">
             <input
@@ -64,10 +64,10 @@
               type="checkbox"
               name="Vegansk"
               value="Ja"
-              id="foodOption2"
-              :disabled="isComing == 'false'"
+              id="Vegansk"
+              :disabled="isComing == 'Jag kan tyvärr inte komma'"
             />
-            <label class="form-check-label" for="foodOption2">Vegansk</label>
+            <label class="form-check-label" for="Vegansk">Vegansk</label>
           </div>
           <div class="form-check">
             <input
@@ -75,10 +75,10 @@
               type="checkbox"
               name="Glutenfri"
               value="Ja"
-              id="foodOption3"
-              :disabled="isComing == 'false'"
+              id="Glutenfri"
+              :disabled="isComing == 'Jag kan tyvärr inte komma'"
             />
-            <label class="form-check-label" for="foodOption3">Glutenfri</label>
+            <label class="form-check-label" for="Glutenfri">Glutenfri</label>
           </div>
           <div class="form-check">
             <input
@@ -86,10 +86,10 @@
               type="checkbox"
               name="Laktosfri"
               value="Ja"
-              id="foodOption4"
-              :disabled="isComing == 'false'"
+              id="Laktosfri"
+              :disabled="isComing == 'Jag kan tyvärr inte komma'"
             />
-            <label class="form-check-label" for="foodOption4">Laktosfri</label>
+            <label class="form-check-label" for="Laktosfri">Laktosfri</label>
           </div>
           <div class="form-check">
             <input
@@ -97,10 +97,10 @@
               type="checkbox"
               name="Mjölkfri"
               value="Ja"
-              id="foodOption5"
-              :disabled="isComing == 'false'"
+              id="Mjölkfri"
+              :disabled="isComing == 'Jag kan tyvärr inte komma'"
             />
-            <label class="form-check-label" for="foodOption5">Mjölkfri</label>
+            <label class="form-check-label" for="Mjölkfri">Mjölkfri</label>
           </div>
         </div>
         <div class="col-md">
@@ -109,7 +109,7 @@
             type="text"
             name="Övriga matpreferenser"
             class="form-control"
-            :disabled="isComing == 'false'"
+            :disabled="isComing == 'Jag kan tyvärr inte komma'"
           />
         </div>
       </div>
@@ -120,7 +120,7 @@
             class="form-control"
             name="Övriga upplysningar"
             rows="3"
-            :disabled="isComing == 'false'"
+            :disabled="isComing == 'Jag kan tyvärr inte komma'"
           ></textarea>
         </div>
         <div class="col-md">
