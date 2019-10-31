@@ -17,7 +17,7 @@
               type="radio"
               name="Svar"
               id="option1"
-              value="true"
+              value="Jag kommer"
             />
             <label class="form-check-label" for="option1">Jag kommer</label>
           </div>
@@ -28,7 +28,7 @@
               type="radio"
               name="Svar"
               id="option2"
-              value="false"
+              value="Jag kan tyvärr inte komma"
             />
             <label class="form-check-label" for="option2">Jag kan tyvärr inte komma</label>
           </div>
@@ -52,6 +52,7 @@
               class="form-check-input"
               type="checkbox"
               name="Vegetarisk"
+              value="Ja"
               id="foodOption1"
               :disabled="isComing == 'false'"
             />
@@ -62,7 +63,7 @@
               class="form-check-input"
               type="checkbox"
               name="Vegansk"
-              value
+              value="Ja"
               id="foodOption2"
               :disabled="isComing == 'false'"
             />
@@ -73,7 +74,7 @@
               class="form-check-input"
               type="checkbox"
               name="Glutenfri"
-              value
+              value="Ja"
               id="foodOption3"
               :disabled="isComing == 'false'"
             />
@@ -84,7 +85,7 @@
               class="form-check-input"
               type="checkbox"
               name="Laktosfri"
-              value
+              value="Ja"
               id="foodOption4"
               :disabled="isComing == 'false'"
             />
@@ -95,7 +96,7 @@
               class="form-check-input"
               type="checkbox"
               name="Mjölkfri"
-              value
+              value="Ja"
               id="foodOption5"
               :disabled="isComing == 'false'"
             />
