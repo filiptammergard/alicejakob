@@ -7,6 +7,7 @@ import Accomodation from "./views/Accomodation";
 import Wishlist from "./views/Wishlist";
 import OSA from "./views/OSA";
 import Contact from "./views/Contact";
+import FourOhFour from "./views/404";
 
 Vue.use(Router);
 
@@ -59,6 +60,14 @@ const router = new Router({
       component: Contact,
       meta: {
         title: "Kontakt | Alice & Jakob"
+      }
+    },
+    {
+      path: "*",
+      name: "404",
+      component: FourOhFour,
+      meta: {
+        title: "404 | Alice & Jakob"
       }
     }
   ]

@@ -1,0 +1,14 @@
+form {
+  background-color: rgba($primary-color, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
+
+  b {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .form-row .col-md {
+    margin-bottom: 1rem;
+  }
+}

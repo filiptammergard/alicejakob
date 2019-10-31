@@ -1,5 +1,7 @@
 <template>
-  <div id="wishlist-component"></div>
+  <div id="wishlist-component">
+    <h1>Önskelista</h1>
+  </div>
 </template>
 
 <script>

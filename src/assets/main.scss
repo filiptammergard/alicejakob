@@ -1,5 +1,11 @@
 @import "settings";
 @import "navbar";
+@import "footer";
+@import "form";
+
+#app section {
+  min-height: calc(100vh - 2rem);
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -16,4 +22,27 @@ h2 {
 p {
   font-family: "Open Sans", sans-serif;
   font-family: 1rem;
+}
+main {
+  a:link {
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    transition: background-size 0.2s ease-in-out 0s;
+  }
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    background-size: 100% 100%;
+  }
+}
+
+::selection {
+  color: white;
+  background: $primary-color;
 }
