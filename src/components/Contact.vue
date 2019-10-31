@@ -9,7 +9,7 @@
     </p>
     <h2>Hålla tal</h2>
     <p>Använd det här formuläret för att anmäla om du vill hålla tal eller spexa på bröllopsfesten. Värdarna kommer att höra av sig till dig när de har fått din anmälan om tal eller spex för vidare information.</p>
-    <form name="talanmälan" method="POST" id="talanmälan" netlify>
+    <form name="talanmälan" method="POST" id="talanmälan" data-netlify="true">
       <div class="form-row">
         <div class="col-md">
           <b>För- och efternamn*</b>
