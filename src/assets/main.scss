@@ -49,6 +49,13 @@ main {
 }
 
 #welcome-component {
+  .center {
+    text-align: center;
+  }
+  img {
+    width: 50%;
+    margin: auto;
+  }
   .countdown {
     text-align: center;
 

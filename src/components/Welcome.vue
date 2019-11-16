@@ -2,6 +2,10 @@
   <div id="welcome-component">
     <h1>Välkommen!</h1>
     <p>Hej och välkommen till vår bröllopshemsida! Här har vi samlat information som kan vara bra för dig som bröllopsgäst att få ta del av.</p>
+    <div class="center">
+      <img src="../../public/alicejakob.jpg" />
+    </div>
+    <br />
     <div class="d-flex flex-row justify-content-around countdown">
       <div>
         <p>
