@@ -48,35 +48,29 @@ main {
   background: $primary-color;
 }
 
-.card {
-  display: inline-block;
-  text-align: center;
-  min-width: 43%;
-  margin: 1rem;
+#welcome-component {
+  .countdown {
+    text-align: center;
 
-  .card-header {
-    font-weight: 700;
-    background-color: $primary-color;
-  }
-  p {
-    margin: 0;
+    p span:first-child {
+      font-size: 2.5rem;
+      color: $primary-color;
+    }
   }
 }
 
-@media (min-width: 768px) {
+#wishlist-component {
   .card {
-    display: inline-block;
     text-align: center;
-    max-width: 40%;
-    min-width: 8rem;
-    margin: 1rem;
+    padding-top: 1rem;
 
-    .card-header {
-      font-weight: 700;
-      background-color: $primary-color;
-    }
     p {
-      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      width: 8rem;
+      height: 8rem;
     }
   }
 }

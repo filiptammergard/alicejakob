@@ -2,33 +2,37 @@
   <div id="welcome-component">
     <h1>Välkommen!</h1>
     <p>Hej och välkommen till vår bröllopshemsida! Här har vi samlat information som kan vara bra för dig som bröllopsgäst att få ta del av.</p>
-    <h2>Nedräkning</h2>
-    <div class>
-      <div class="card">
-        <div class="card-header">Dagar</div>
-        <div class="card-body">
-          <p>{{ daysToWedding }}</p>
-        </div>
+    <div class="d-flex flex-row justify-content-around countdown">
+      <div>
+        <p>
+          <span>{{ daysToWedding }}</span>
+          <br />
+          <span>dagar</span>
+        </p>
       </div>
-      <div class="card">
-        <div class="card-header">Timmar</div>
-        <div class="card-body">
-          <p>{{ hoursToWedding }}</p>
-        </div>
+      <div>
+        <p>
+          <span>{{ hoursToWedding }}</span>
+          <br />
+          <span>timmar</span>
+        </p>
       </div>
-      <div class="card">
-        <div class="card-header">Minuter</div>
-        <div class="card-body">
-          <p>{{ minutesToWedding }}</p>
-        </div>
+      <div>
+        <p>
+          <span>{{ minutesToWedding }}</span>
+          <br />
+          <span>minuter</span>
+        </p>
       </div>
-      <div class="card">
-        <div class="card-header">Sekunder</div>
-        <div class="card-body">
-          <p>{{ secondsToWedding }}</p>
-        </div>
+      <div>
+        <p>
+          <span>{{ secondsToWedding }}</span>
+          <br />
+          <span>sekunder</span>
+        </p>
       </div>
     </div>
+    <h2 style="text-align: center;">... kvar till Alice &amp; Jakobs vigsel</h2>
   </div>
 </template>
 
@@ -45,7 +49,7 @@ export default {
     };
   },
   created() {
-    let countDownDate = new Date("Aug 1, 2020 13:00:00").getTime();
+    let countDownDate = new Date("Aug 1, 2020 14:30:00").getTime();
     this.countDownDate(countDownDate);
     setInterval(() => {
       this.countDownDate(countDownDate);
@@ -53,13 +57,8 @@ export default {
   },
   methods: {
     countDownDate(countDownDate) {
-      // Get today's date and time
       let now = new Date().getTime();
-
-      // Find the distance between now and the count down date
       let distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
       this.daysToWedding = Math.floor(distance / (1000 * 60 * 60 * 24));
       this.hoursToWedding = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
