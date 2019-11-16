@@ -27,7 +27,7 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Till exempel brudparet gammelfarbror"
+            placeholder="Till exempel brudgummens gammelfarbror"
             name="Relation till brudparet"
             required
           />

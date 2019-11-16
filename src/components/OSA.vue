@@ -41,7 +41,7 @@
         </div>
         <div class="col-md">
           <b>Mejladress*</b>
-          <input type="text" name="Mejladress" class="form-control" />
+          <input type="email" name="Mejladress" class="form-control" />
         </div>
       </div>
       <div class="form-row">

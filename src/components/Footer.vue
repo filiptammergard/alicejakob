@@ -1,11 +1,16 @@
 <template>
   <div id="footer-component">
-    <footer>&copy; 2019 Tammergård</footer>
+    <footer>&copy; {{ currentYear}} Tammergård</footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: "footer-component"
+  name: "footer-component",
+  computed: {
+    currentYear() {
+      return new Date().getFullYear();
+    }
+  }
 };
 </script>

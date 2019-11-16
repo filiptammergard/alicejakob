@@ -12,16 +12,17 @@ body {
   font-family: 1rem;
 }
 h1 {
-  font-family: "Stalemate", cursive;
+  font-family: "Allura", cursive;
   font-size: 4rem;
 }
 h2 {
-  font-family: "Stalemate", cursive;
+  font-family: "Allura", cursive;
   font-size: 2.5rem;
 }
 p {
   font-family: "Open Sans", sans-serif;
   font-family: 1rem;
+  margin-bottom: 2rem;
 }
 main {
   a:link {
@@ -45,4 +46,37 @@ main {
 ::selection {
   color: white;
   background: $primary-color;
+}
+
+.card {
+  display: inline-block;
+  text-align: center;
+  min-width: 43%;
+  margin: 1rem;
+
+  .card-header {
+    font-weight: 700;
+    background-color: $primary-color;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    display: inline-block;
+    text-align: center;
+    max-width: 40%;
+    min-width: 8rem;
+    margin: 1rem;
+
+    .card-header {
+      font-weight: 700;
+      background-color: $primary-color;
+    }
+    p {
+      margin: 0;
+    }
+  }
 }

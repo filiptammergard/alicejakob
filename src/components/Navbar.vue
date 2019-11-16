@@ -10,10 +10,6 @@
           <span>Hitta</span>
           <i class="fas fa-map-marked-alt"></i>
         </router-link>
-        <router-link :to="{ name: 'accomodation'}">
-          <span>Boende</span>
-          <i class="fas fa-home"></i>
-        </router-link>
         <router-link :to="{ name: 'wishlist'}">
           <span>Önskelista</span>
           <i class="fas fa-list-ul"></i>
