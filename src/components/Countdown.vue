@@ -2,32 +2,20 @@
   <div id="countdown-component">
     <div class="d-flex flex-row justify-content-around">
       <div>
-        <p>
-          <span>{{ daysToWedding }}</span>
-          <br />
-          <span>dagar</span>
-        </p>
+        <p>{{ daysToWedding }}</p>
+        <p>Dagar</p>
       </div>
       <div>
-        <p>
-          <span>{{ hoursToWedding }}</span>
-          <br />
-          <span>timmar</span>
-        </p>
+        <p>{{ hoursToWedding }}</p>
+        <p>Timmar</p>
       </div>
       <div>
-        <p>
-          <span>{{ minutesToWedding }}</span>
-          <br />
-          <span>minuter</span>
-        </p>
+        <p>{{ minutesToWedding }}</p>
+        <p>Minuter</p>
       </div>
       <div>
-        <p>
-          <span>{{ secondsToWedding }}</span>
-          <br />
-          <span>sekunder</span>
-        </p>
+        <p>{{ secondsToWedding }}</p>
+        <p>Sekunder</p>
       </div>
     </div>
     <h2 style="text-align: center;">... kvar till Alice &amp; Jakobs vigsel</h2>
