@@ -24,6 +24,10 @@
         </router-link>
       </div>
     </nav>
+    <br />
+    <div class="center">
+      <img class="logo" src="../../public/logga.png" />
+    </div>
   </div>
 </template>
 

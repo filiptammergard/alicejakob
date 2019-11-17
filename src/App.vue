@@ -2,8 +2,6 @@
   <div id="app">
     <section>
       <Navbar />
-      <br />
-      <br />
       <main>
         <router-view />
       </main>
