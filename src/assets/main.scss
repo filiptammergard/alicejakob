@@ -2,7 +2,10 @@
 @import "navbar";
 @import "footer";
 @import "form";
+@import "welcome";
 @import "countdown";
+@import "wishlist";
+@import "wish";
 
 #app section {
   min-height: calc(100vh - 2rem);
@@ -23,7 +26,6 @@ h2 {
 p {
   font-family: "Open Sans", sans-serif;
   font-family: 1rem;
-  margin-bottom: 2rem;
 }
 main {
   a:link {
@@ -54,20 +56,4 @@ main {
 img.logo {
   width: 50%;
   margin: auto;
-}
-
-#wishlist-component {
-  .card {
-    text-align: center;
-    padding-top: 1rem;
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    img {
-      width: 8rem;
-      height: 8rem;
-    }
-  }
 }

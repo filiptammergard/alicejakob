@@ -1,25 +1,62 @@
 <template>
   <div id="wishlist-component">
     <h1>Önskelista</h1>
-    <p>Den finaste presenten ni kan ge är att få är att vi får dela vår bröllopsdag med er. Vill ni ändå gärna ge något extra så är här tips på saker som vi önskar oss!</p>
-    <div class="card" style="width: 18rem;">
-      <div>
-        <img
-          src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTJqRON3Ff7Wx0PeuvtxPvDSs5cHCplVFx4WfWpQrbmhxaiS0a055CO1St3qhrd4KqHiU5mPVhmvpPaM7ulUq4bCVj0zJaOBd-UZqSlG44bkCoSnr_XvdE_zw&usqp=CAc"
-          class="card-img-top"
-        />
-      </div>
-      <div class="card-body">
-        <b>Tallrik: Ikea Modell</b>
-        <p class="card-text"></p>
-        <button class="btn btn-secondary btn-block" type="submit">Visa</button>
+    <p>
+      Den finaste presenten ni kan ge är att få är att vi får dela vår bröllopsdag med er. Vill ni
+      ändå gärna ge något extra så är här tips på saker som vi önskar oss!
+    </p>
+    <router-link class="btn btn-secondary btn-block" tag="button" :to="{ name: 'postwish' }"
+      >Ny önskesak</router-link
+    >
+    <br />
+    <div class="d-flex flex-row justify-content-center flex-wrap">
+      <div v-for="wish in wishes" :key="wish.id">
+        <div class="card" style="width: 15rem;">
+          <div>
+            <img :src="wish.imagelink" class="card-img-top" />
+          </div>
+          <div class="card-body">
+            <b>{{ wish.item }}</b>
+            <p class="card-text"></p>
+            <router-link
+              tag="button"
+              :to="{ name: 'wish', params: { id: wish.id } }"
+              class="btn btn-secondary btn-block"
+              >Visa önskesak</router-link
+            >
+            <button class="btn btn-secondary btn-block" @click="this.wish = wish">
+              Visa
+            </button>
+            <router-link
+              tag="button"
+              :to="{ name: 'wish', params: { id: wish.id } }"
+              class="btn btn-warning btn-block"
+              >Ändra önskesak</router-link
+            >
+          </div>
+        </div>
       </div>
     </div>
+    <Wish :wish="this.wish"></Wish>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+import Wish from "../components/Wish";
+
 export default {
-  name: "wishlist-component"
+  name: "wishlist-component",
+  data() {
+    return {
+      wish: ""
+    };
+  },
+  components: {
+    Wish
+  },
+  computed: {
+    ...mapState(["wishes"])
+  }
 };
 </script>

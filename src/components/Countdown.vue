@@ -18,10 +18,8 @@
         <p>Sekunder</p>
       </div>
     </div>
-    <h2 style="text-align: center;">... kvar till Alice &amp; Jakobs vigsel</h2>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -47,12 +45,8 @@ export default {
       let now = new Date().getTime();
       let distance = countDownDate - now;
       this.daysToWedding = Math.floor(distance / (1000 * 60 * 60 * 24));
-      this.hoursToWedding = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      this.minutesToWedding = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
+      this.hoursToWedding = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      this.minutesToWedding = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       this.secondsToWedding = Math.floor((distance % (1000 * 60)) / 1000);
     }
   }

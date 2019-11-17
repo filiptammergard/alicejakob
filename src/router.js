@@ -3,8 +3,9 @@ import Router from "vue-router";
 
 import Welcome from "./views/Welcome";
 import Find from "./views/Find";
-import Accomodation from "./views/Accomodation";
 import Wishlist from "./views/Wishlist";
+import Wish from "./views/Wish";
+import PostWish from "./views/PostWish";
 import OSA from "./views/OSA";
 import Contact from "./views/Contact";
 import FormSuccess from "./views/FormSuccess";
@@ -32,19 +33,27 @@ const router = new Router({
       }
     },
     {
-      path: "/boende",
-      name: "accomodation",
-      component: Accomodation,
-      meta: {
-        title: "Boende | Alice & Jakob"
-      }
-    },
-    {
       path: "/önskelista",
       name: "wishlist",
       component: Wishlist,
       meta: {
         title: "Önskelista | Alice & Jakob"
+      }
+    },
+    {
+      path: "/önskelista/:id",
+      name: "wish",
+      component: Wish,
+      meta: {
+        title: "Önskesak | Alice & Jakob"
+      }
+    },
+    {
+      path: "/önskelista/ny",
+      name: "postwish",
+      component: PostWish,
+      meta: {
+        title: "Lägg till önsketips | Alice & Jakob"
       }
     },
     {

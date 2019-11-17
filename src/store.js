@@ -63,11 +63,45 @@ export default new Vuex.Store({
               given: doc.data().given,
               order: doc.data().order,
               bookingAmount: 1,
-              imageLink: doc.data().imagelink
+              imagelink: doc.data().imagelink
             });
           });
           commit("getWishes", wishes);
           commit("unsubscribeHandler", unsubscribe);
+        });
+    },
+    postWish(context, wish) {
+      // eslint-disable-next-line no-console
+      console.log(wish);
+      db.collection("wishes")
+        .orderBy("order")
+        .get()
+        .then(querySnapshot => {
+          if (querySnapshot.docs.length) {
+            db.collection("wishes")
+              .add({
+                item: wish.item,
+                amount: Number(wish.amount),
+                specification: wish.specification,
+                link: wish.link,
+                imagelink: wish.imagelink,
+                order: querySnapshot.docs[querySnapshot.docs.length - 1].data().order + 1,
+                given: 0
+              })
+              .then(router.push({ name: "wishlist" }));
+          } else {
+            db.collection("wishes")
+              .add({
+                item: wish.item,
+                amount: Number(wish.amount),
+                specification: wish.specification,
+                link: wish.link,
+                imagelink: wish.imagelink,
+                order: 0,
+                given: 0
+              })
+              .then(router.push({ name: "wishlist" }));
+          }
         });
     },
     updateWishes(context, wishes) {
@@ -100,36 +134,6 @@ export default new Vuex.Store({
     },
     bookedFalse({ commit }) {
       commit("bookedFalse");
-    },
-    addWish(context, wish) {
-      db.collection("wishes")
-        .orderBy("order")
-        .get()
-        .then(querySnapshot => {
-          if (querySnapshot.docs.length) {
-            db.collection("wishes")
-              .add({
-                item: wish.item,
-                amount: Number(wish.amount),
-                specification: wish.specification,
-                link: wish.link,
-                order: querySnapshot.docs[querySnapshot.docs.length - 1].data().order + 1,
-                given: 0
-              })
-              .then(router.push({ name: "home" }));
-          } else {
-            db.collection("wishes")
-              .add({
-                item: wish.item,
-                amount: Number(wish.amount),
-                specification: wish.specification,
-                link: wish.link,
-                order: 0,
-                given: 0
-              })
-              .then(router.push({ name: "home" }));
-          }
-        });
     },
     async editWish(context, wish) {
       let given = await db
