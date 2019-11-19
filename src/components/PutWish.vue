@@ -1,7 +1,7 @@
 <template>
-  <div id="postwish-component">
-    <h1>Lägg till önsketips</h1>
-    <form @submit.prevent="postWish(wish)">
+  <div id="putwish-component">
+    <h1>Ändra önsketips</h1>
+    <form @submit.prevent="putWish(wish)">
       <div class="form-group">
         <input
           v-model="wish.item"
@@ -35,16 +35,17 @@
       <div class="form-group">
         <input v-model="wish.imagelink" type="text" class="form-control" placeholder="Bildlänk" />
       </div>
-      <button :disabled="!validWish" type="submit" class="btn btn-secondary btn-block">Lägg till</button>
+      <button :disabled="!validWish" type="submit" class="btn btn-secondary btn-block">Ändra</button>
     </form>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
+import db from "@/components/firebaseInit";
 
 export default {
-  name: "postwish-component",
+  name: "putwish-component",
   data() {
     return {
       wish: {
@@ -57,9 +58,24 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["postWish"])
+    ...mapActions(["putWish"])
+  },
+  created() {
+    if (this.wishes.length) {
+      this.wish = this.wishes.filter(
+        wish => wish.id == this.$route.params.id
+      )[0];
+    } else {
+      db.collection("wishes")
+        .doc(this.$route.params.id)
+        .get()
+        .then(doc => {
+          this.wish = doc.data();
+        });
+    }
   },
   computed: {
+    ...mapState(["wishes"]),
     validWish() {
       if (
         this.wish.item != null &&

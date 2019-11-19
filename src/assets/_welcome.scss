@@ -1,7 +1,17 @@
 #welcome-component {
   h2 {
+    font-size: 2rem;
     span:last-child {
       color: $primary-color;
+      margin-left: 1rem;
+    }
+  }
+  @media (min-width: 768px) {
+    h2 {
+      span:last-child {
+        color: $primary-color;
+        margin-left: 1rem;
+      }
     }
   }
 }

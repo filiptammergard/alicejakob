@@ -6,6 +6,7 @@ import Find from "./views/Find";
 import Wishlist from "./views/Wishlist";
 import Wish from "./views/Wish";
 import PostWish from "./views/PostWish";
+import PutWish from "./views/PutWish";
 import OSA from "./views/OSA";
 import Contact from "./views/Contact";
 import FormSuccess from "./views/FormSuccess";
@@ -54,6 +55,14 @@ const router = new Router({
       component: PostWish,
       meta: {
         title: "Lägg till önsketips | Alice & Jakob"
+      }
+    },
+    {
+      path: "/önskelista/:id/ändra",
+      name: "putwish",
+      component: PutWish,
+      meta: {
+        title: "Ändra önsketips | Alice & Jakob"
       }
     },
     {

@@ -5,9 +5,11 @@
       Den finaste presenten ni kan ge är att få är att vi får dela vår bröllopsdag med er. Vill ni
       ändå gärna ge något extra så är här tips på saker som vi önskar oss!
     </p>
-    <router-link class="btn btn-secondary btn-block" tag="button" :to="{ name: 'postwish' }"
-      >Ny önskesak</router-link
-    >
+    <router-link
+      class="btn btn-secondary btn-block"
+      tag="button"
+      :to="{ name: 'postwish' }"
+    >Ny önskesak</router-link>
     <br />
     <div class="d-flex flex-row justify-content-center flex-wrap">
       <div v-for="wish in wishes" :key="wish.id">
@@ -22,38 +24,26 @@
               tag="button"
               :to="{ name: 'wish', params: { id: wish.id } }"
               class="btn btn-secondary btn-block"
-              >Visa önskesak</router-link
-            >
-            <button class="btn btn-secondary btn-block" @click="this.wish = wish">
-              Visa
-            </button>
+            >Visa önskesak</router-link>
             <router-link
               tag="button"
-              :to="{ name: 'wish', params: { id: wish.id } }"
+              :to="{ name: 'putwish', params: { id: wish.id } }"
               class="btn btn-warning btn-block"
-              >Ändra önskesak</router-link
-            >
+            >Ändra önskesak</router-link>
           </div>
         </div>
       </div>
     </div>
-    <Wish :wish="this.wish"></Wish>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import Wish from "../components/Wish";
 
 export default {
   name: "wishlist-component",
   data() {
-    return {
-      wish: ""
-    };
-  },
-  components: {
-    Wish
+    return {};
   },
   computed: {
     ...mapState(["wishes"])

@@ -22,6 +22,7 @@ export default new Vuex.Store({
     getWishes(state, wishes) {
       state.wishes = wishes;
     },
+
     unsubscribeHandler(state, unsubscribe) {
       state.unsubscribe = unsubscribe;
     },
@@ -71,8 +72,6 @@ export default new Vuex.Store({
         });
     },
     postWish(context, wish) {
-      // eslint-disable-next-line no-console
-      console.log(wish);
       db.collection("wishes")
         .orderBy("order")
         .get()
@@ -104,6 +103,34 @@ export default new Vuex.Store({
           }
         });
     },
+    async putWish(context, wish) {
+      let given = await db
+        .collection("wishes")
+        .doc(router.currentRoute.params.id)
+        .get()
+        .then(doc => {
+          return doc.data().given;
+        });
+
+      if (Number(wish.amount) >= Number(given)) {
+        db.collection("wishes")
+          .doc(router.currentRoute.params.id)
+          .update({
+            item: wish.item,
+            amount: Number(wish.amount),
+            specification: wish.specification,
+            link: wish.link
+          });
+        router.push({ name: "wishlist" });
+      } else {
+        alert(
+          'Du kan inte ändra antalet önskade av önsketipset "' +
+            wish.item +
+            '" så att det understiger vad som redan är bokat. Var vänlig försök igen.'
+        );
+      }
+    },
+
     updateWishes(context, wishes) {
       context.commit("updateWishes", wishes);
     },
