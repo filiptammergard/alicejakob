@@ -1,6 +1,6 @@
 <template>
   <div id="postwish-component">
-    <h1>Lägg till önsketips</h1>
+    <h1>Lägg till önskesak</h1>
     <form @submit.prevent="postWish(wish)">
       <div class="form-group">
         <input
@@ -35,7 +35,16 @@
       <div class="form-group">
         <input v-model="wish.imagelink" type="text" class="form-control" placeholder="Bildlänk" />
       </div>
-      <button :disabled="!validWish" type="submit" class="btn btn-secondary btn-block">Lägg till</button>
+      <button
+        :disabled="!validWish"
+        type="submit"
+        class="btn btn-secondary btn-block"
+      >Lägg till önskesak</button>
+      <router-link
+        class="btn btn-secondary btn-block"
+        tag="button"
+        :to="{ name: 'wishlist'}"
+      >Tillbaka till önskelistan</router-link>
     </form>
   </div>
 </template>

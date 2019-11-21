@@ -1,6 +1,6 @@
 <template>
   <div id="putwish-component">
-    <h1>Ändra önsketips</h1>
+    <h1>Ändra önskesak</h1>
     <form @submit.prevent="putWish(wish)">
       <div class="form-group">
         <input
@@ -35,7 +35,17 @@
       <div class="form-group">
         <input v-model="wish.imagelink" type="text" class="form-control" placeholder="Bildlänk" />
       </div>
-      <button :disabled="!validWish" type="submit" class="btn btn-secondary btn-block">Ändra</button>
+      <button
+        :disabled="!validWish"
+        type="submit"
+        class="btn btn-secondary btn-block"
+      >Ändra önskesak</button>
+      <button class="btn btn-danger btn-block" @click="deleteWish()">Ta bort önskesak</button>
+      <router-link
+        class="btn btn-secondary btn-block"
+        tag="button"
+        :to="{ name: 'wishlist'}"
+      >Tillbaka till önskelistan</router-link>
     </form>
   </div>
 </template>
@@ -58,7 +68,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["putWish"])
+    ...mapActions(["putWish", "deleteWish"])
   },
   created() {
     if (this.wishes.length) {

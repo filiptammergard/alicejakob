@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Vue from "vue";
 import Vuex from "vuex";
 import router from "./router";
@@ -130,6 +131,36 @@ export default new Vuex.Store({
         );
       }
     },
+    async deleteWish() {
+      let wish = await db
+        .collection("wishes")
+        .doc(router.currentRoute.params.id)
+        .get()
+        .then(doc => {
+          return doc.data();
+        });
+      if (
+        confirm(
+          'Är du säker på att du vill radera önsketipset "' + wish.item + '" från önskelistan?'
+        )
+      ) {
+        db.collection("wishes")
+          .doc(router.currentRoute.params.id)
+          .delete();
+        router.push({ name: "wishlist" });
+        db.collection("wishes")
+          .where("order", ">", wish.order)
+          .orderBy("order")
+          .get()
+          .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              db.collection("wishes")
+                .doc(doc.id)
+                .update({ order: doc.data().order - 1 });
+            });
+          });
+      }
+    },
 
     updateWishes(context, wishes) {
       context.commit("updateWishes", wishes);
@@ -161,63 +192,6 @@ export default new Vuex.Store({
     },
     bookedFalse({ commit }) {
       commit("bookedFalse");
-    },
-    async editWish(context, wish) {
-      let given = await db
-        .collection("wishes")
-        .doc(router.currentRoute.params.id)
-        .get()
-        .then(doc => {
-          return doc.data().given;
-        });
-
-      if (Number(wish.amount) >= given) {
-        db.collection("wishes")
-          .doc(router.currentRoute.params.id)
-          .update({
-            item: wish.item,
-            amount: Number(wish.amount),
-            specification: wish.specification,
-            link: wish.link
-          });
-        router.push({ name: "home" });
-      } else {
-        alert(
-          'Du kan inte ändra antalet önskade av önsketipset "' +
-            wish.item +
-            '" så att det understiger vad som redan är bokat. Var vänlig försök igen.'
-        );
-      }
-    },
-    async deleteWish() {
-      let wish = await db
-        .collection("wishes")
-        .doc(router.currentRoute.params.id)
-        .get()
-        .then(doc => {
-          return doc.data();
-        });
-      if (
-        confirm(
-          'Är du säker på att du vill radera önsketipset "' + wish.item + '" från önskelistan?'
-        )
-      ) {
-        db.collection("wishes")
-          .doc(router.currentRoute.params.id)
-          .delete();
-        router.push({ name: "home" });
-        db.collection("wishes")
-          .where("order", ">", wish.order)
-          .orderBy("order")
-          .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-              db.collection("wishes")
-                .doc(doc.id)
-                .update({ order: doc.data().order - 1 });
-            });
-          });
-      }
     },
     onEnd(context, e) {
       db.collection("wishes")
