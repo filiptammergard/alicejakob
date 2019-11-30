@@ -7,12 +7,12 @@
 
       &:first-child {
         font-size: 2rem;
-        color: $primary-color;
       }
 
       &:last-child {
         font-size: 1.4rem;
         margin-top: -1rem;
+        color: black;
       }
     }
   }

@@ -25,7 +25,6 @@
         <a style="display:none" class="nav-item nav-link" @click="logout">Logga ut</a>
       </div>
     </nav>
-    <br />
   </div>
 </template>
 

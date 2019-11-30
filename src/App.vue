@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <section>
+    <section class="app-section">
       <Navbar />
       <main>
         <router-view />
       </main>
       <br />
-      <br />
-      <br />
     </section>
-    <div class="center">
+    <!-- <div class="center">
       <img class="logo" src="../public/logga2.png" />
-    </div>
+    </div>-->
     <Footer />
   </div>
 </template>

@@ -1,23 +1,25 @@
 <template>
   <div id="countdown-component">
-    <div class="d-flex flex-row justify-content-around">
-      <div>
-        <p>{{ daysToWedding }}</p>
-        <p>Dagar</p>
+    <section class="light">
+      <div class="d-flex flex-row justify-content-around">
+        <div>
+          <p>{{ daysToWedding }}</p>
+          <p>Dagar</p>
+        </div>
+        <div>
+          <p>{{ hoursToWedding }}</p>
+          <p>Timmar</p>
+        </div>
+        <div>
+          <p>{{ minutesToWedding }}</p>
+          <p>Minuter</p>
+        </div>
+        <div>
+          <p>{{ secondsToWedding }}</p>
+          <p>Sekunder</p>
+        </div>
       </div>
-      <div>
-        <p>{{ hoursToWedding }}</p>
-        <p>Timmar</p>
-      </div>
-      <div>
-        <p>{{ minutesToWedding }}</p>
-        <p>Minuter</p>
-      </div>
-      <div>
-        <p>{{ secondsToWedding }}</p>
-        <p>Sekunder</p>
-      </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -45,8 +47,12 @@ export default {
       let now = new Date().getTime();
       let distance = countDownDate - now;
       this.daysToWedding = Math.floor(distance / (1000 * 60 * 60 * 24));
-      this.hoursToWedding = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      this.minutesToWedding = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      this.hoursToWedding = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      this.minutesToWedding = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
       this.secondsToWedding = Math.floor((distance % (1000 * 60)) / 1000);
     }
   }

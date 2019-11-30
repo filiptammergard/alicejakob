@@ -7,7 +7,7 @@
 @import "wishlist";
 @import "wish";
 
-#app section {
+#app section:not(.light):not(.dark) {
   min-height: calc(100vh - 2rem);
 }
 
@@ -64,4 +64,20 @@ img.logo {
   &:hover {
     background-color: darken(rgb(182, 164, 149), 20);
   }
+}
+section:not(.app-section) {
+  margin: 0 calc(-50vw + 50%);
+  padding: 2rem 0;
+  color: white;
+
+  &.dark {
+    background-color: $primary-color;
+  }
+
+  &.light {
+    background-color: $secondary-color;
+  }
+}
+img {
+  width: 100%;
 }
