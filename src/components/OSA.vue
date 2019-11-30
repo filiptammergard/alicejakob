@@ -128,7 +128,7 @@
           <textarea class="form-control" name="Hälsning till brudparet" rows="3"></textarea>
         </div>
       </div>
-      <button class="btn btn-secondary btn-block" type="submit">Anmäl</button>
+      <button class="btn btn-custom btn-block text-white" type="submit">Anmäl</button>
     </form>
     <br />
     <p>Fält markerade med * är obligatoriska och måste fyllas i.</p>

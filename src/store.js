@@ -11,11 +11,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     adminPassword: "adminadmin",
-    guestPassword: "aliceohcjakob2020",
+    guestPassword: "aliceochjakob2020",
+
+    isAdmin: false,
+    isAuth: false,
+    isGuest: true,
 
     wishes: [],
-    isLoggedIn: false,
-    isAdmin: false,
+
     unsubscribe: null,
     booked: false
   },
@@ -23,15 +26,18 @@ export default new Vuex.Store({
     getWishes(state, wishes) {
       state.wishes = wishes;
     },
+    logout(state) {
+      state.isAdmin = false;
+      state.isAuth = false;
+      state.isGuest = true;
+      //state.unsubscribe();
+    },
 
     unsubscribeHandler(state, unsubscribe) {
       state.unsubscribe = unsubscribe;
     },
     updateWishes(state, wishes) {
       state.wishes = wishes;
-    },
-    logout(state) {
-      state.unsubscribe();
     },
     nowAdmin(state) {
       state.isAdmin = true;
@@ -161,14 +167,13 @@ export default new Vuex.Store({
           });
       }
     },
-
-    updateWishes(context, wishes) {
-      context.commit("updateWishes", wishes);
-    },
-
     logout({ commit }) {
       commit("logout");
       firebase.auth().signOut();
+    },
+
+    updateWishes(context, wishes) {
+      context.commit("updateWishes", wishes);
     },
     nowAdmin({ commit }) {
       commit("nowAdmin");

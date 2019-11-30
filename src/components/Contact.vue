@@ -58,7 +58,7 @@
           <input type="text" class="form-control" name="Övriga önskemål" />
         </div>
       </div>
-      <button class="btn btn-secondary btn-block" type="submit">Skicka</button>
+      <button class="btn btn-custom btn-block text-white" type="submit">Skicka</button>
     </form>
     <br />
     <p>Fält markerade med * är obligatoriska och måste fyllas i.</p>
@@ -66,8 +66,8 @@
     <p>
       Om du har en fråga som behöver ställas direkt till brudparet kan du göra det via
       <a
-        href="mailto:hej@aliceochjakob.se"
-      >hej@aliceochjakob.se</a>.
+        href="mailto:brudparet@aliceochjakob.se"
+      >brudparet@aliceochjakob.se</a>.
     </p>
   </div>
 </template>

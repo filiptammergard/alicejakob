@@ -1,5 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
+import store from "./store.js";
+
+import firebase from "firebase";
 
 import Welcome from "./views/Welcome";
 import Find from "./views/Find";
@@ -8,6 +11,7 @@ import Wish from "./views/Wish";
 import PostWish from "./views/PostWish";
 import PutWish from "./views/PutWish";
 import OSA from "./views/OSA";
+import Login from "./views/Login";
 import Contact from "./views/Contact";
 import FormSuccess from "./views/FormSuccess";
 import FourOhFour from "./views/404";
@@ -22,7 +26,8 @@ const router = new Router({
       name: "welcome",
       component: Welcome,
       meta: {
-        title: "Välkommen | Alice & Jakob"
+        title: "Välkommen",
+        authRequired: true
       }
     },
     {
@@ -30,7 +35,8 @@ const router = new Router({
       name: "find",
       component: Find,
       meta: {
-        title: "Hitta | Alice & Jakob"
+        title: "Hitta",
+        authRequired: true
       }
     },
     {
@@ -38,7 +44,8 @@ const router = new Router({
       name: "wishlist",
       component: Wishlist,
       meta: {
-        title: "Önskelista | Alice & Jakob"
+        title: "Önskelista",
+        authRequired: true
       }
     },
     {
@@ -46,7 +53,8 @@ const router = new Router({
       name: "wish",
       component: Wish,
       meta: {
-        title: "Önskesak | Alice & Jakob"
+        title: "Önskesak",
+        authRequired: true
       }
     },
     {
@@ -54,7 +62,8 @@ const router = new Router({
       name: "postwish",
       component: PostWish,
       meta: {
-        title: "Lägg till önsketips | Alice & Jakob"
+        title: "Lägg till önsketips",
+        adminRequired: true
       }
     },
     {
@@ -62,7 +71,8 @@ const router = new Router({
       name: "putwish",
       component: PutWish,
       meta: {
-        title: "Ändra önsketips | Alice & Jakob"
+        title: "Ändra önsketips",
+        adminRequired: true
       }
     },
     {
@@ -70,7 +80,8 @@ const router = new Router({
       name: "osa",
       component: OSA,
       meta: {
-        title: "O.S.A | Alice & Jakob"
+        title: "O.S.A",
+        authRequired: true
       }
     },
     {
@@ -78,7 +89,17 @@ const router = new Router({
       name: "contact",
       component: Contact,
       meta: {
-        title: "Kontakt | Alice & Jakob"
+        title: "Kontakt",
+        authRequired: true
+      }
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login,
+      meta: {
+        title: "Logga in",
+        guestRequired: true
       }
     },
     {
@@ -86,7 +107,8 @@ const router = new Router({
       name: "FormSuccess",
       component: FormSuccess,
       meta: {
-        title: "Tack | Alice & Jakob"
+        title: "Tack",
+        authRequired: true
       }
     },
     {
@@ -94,43 +116,46 @@ const router = new Router({
       name: "404",
       component: FourOhFour,
       meta: {
-        title: "404 | Alice & Jakob"
+        title: "404"
       }
     }
   ]
 });
 
-// router.beforeEach((to, from, next) => {
-//   let adminRequired = to.matched.some(record => record.meta.adminRequired);
-//   let authRequired = to.matched.some(record => record.meta.authRequired);
+router.beforeEach((to, from, next) => {
+  let adminRequired = to.matched.some(record => record.meta.adminRequired);
+  let authRequired = to.matched.some(record => record.meta.authRequired);
+  let guestRequired = to.matched.some(record => record.meta.guestRequired);
 
-//   firebase.auth().onAuthStateChanged(async user => {
-//     if (user) {
-//       await store.dispatch("fetchWishes");
-//       store.state.isLoggedIn = true;
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      store.state.isAuth = true;
 
-//       if (user.email == "admin@wishlist.com") {
-//         store.state.isAdmin = true;
-//       }
-//     } else {
-//       store.state.isLoggedIn = false;
-//       store.state.isAdmin = false;
-//     }
-//     if (adminRequired && !user) {
-//       next("/");
-//     } else if (adminRequired && user.email == "guest@wishlist.com") {
-//       next("/");
-//     } else if (authRequired && !user) {
-//       next("/");
-//     } else {
-//       next();
-//     }
-//   });
-// });
+      if (user.email == "admin@wishlist.com") {
+        store.state.isAdmin = true;
+      }
+    } else {
+      store.state.isAuth = false;
+      store.state.isAdmin = false;
+      store.state.isGuest = true;
+    }
+    if (adminRequired && !user) {
+      next("/login");
+    } else if (adminRequired && user.email == "guest@wishlist.com") {
+      next("/login");
+    } else if (authRequired && !user) {
+      next("/login");
+    } else if (guestRequired && user) {
+      next("/");
+    } else {
+      next();
+    }
+  });
+});
 
 router.afterEach(to => {
   const defaultPageTitle = "Alice & Jakob";
-  document.title = to.meta.title || defaultPageTitle;
+  document.title = to.meta.title + " | " + defaultPageTitle || defaultPageTitle;
 });
 
 export default router;

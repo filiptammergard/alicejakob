@@ -22,6 +22,7 @@
           <span>Kontakt</span>
           <i class="fas fa-envelope"></i>
         </router-link>
+        <a style="display:none" class="nav-item nav-link" @click="logout">Logga ut</a>
       </div>
     </nav>
     <br />
@@ -29,8 +30,12 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "navbar-component",
-  methods: {}
+  methods: {
+    ...mapActions(["logout"])
+  }
 };
 </script>

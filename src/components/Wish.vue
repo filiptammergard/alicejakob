@@ -15,7 +15,7 @@
         <a :href="wish.link">Länk</a>
       </b>
     </p>
-    <button class="btn btn-secondary">Boka önskesak</button>
+    <button class="btn btn-custom text-white">Boka önskesak</button>
     <br />
     <br />
     <router-link

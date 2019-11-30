@@ -6,7 +6,7 @@
       ändå gärna ge något extra så är här tips på saker som vi önskar oss!
     </p>
     <router-link
-      class="btn btn-secondary btn-block"
+      class="btn btn-custom text-white btn-block"
       tag="button"
       :to="{ name: 'postwish' }"
     >Ny önskesak</router-link>
@@ -23,10 +23,11 @@
             <router-link
               tag="button"
               :to="{ name: 'wish', params: { id: wish.id } }"
-              class="btn btn-secondary btn-block"
+              class="btn btn-custom btn-block text-white"
             >Visa önskesak</router-link>
             <router-link
               tag="button"
+              v-if="isAdmin"
               :to="{ name: 'putwish', params: { id: wish.id } }"
               class="btn btn-warning btn-block"
             >Ändra önskesak</router-link>
@@ -46,7 +47,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["wishes"])
+    ...mapState(["wishes", "isAdmin"])
   }
 };
 </script>
