@@ -1,7 +1,7 @@
 <template>
   <div id="countdown-component">
-    <section class="light">
-      <div class="d-flex flex-row justify-content-around">
+    <section class="light d-flex align-items-center">
+      <div style="width:100%;" class="d-flex flex-row justify-content-around">
         <div>
           <p>{{ daysToWedding }}</p>
           <p>Dagar</p>

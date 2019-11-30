@@ -1,36 +1,36 @@
 <template>
   <div id="wishlist-component">
-    <section class="white">
+    <section class="white d-flex align-items-center">
       <div class="container">
-        <div class="row">
-          <div class="align-self-center">
-            <h1>Önskelista</h1>
-            <p>
-              Den finaste presenten ni kan ge är att få är att vi får dela vår bröllopsdag med er. Vill ni
-              ändå gärna ge något extra så är här tips på saker som vi önskar oss!
-            </p>
-            <router-link
-              class="btn btn-custom text-white btn-block"
-              tag="button"
-              v-if="isAdmin"
-              :to="{ name: 'postwish' }"
-            >Ny önskesak</router-link>
-          </div>
-        </div>
+        <h1>Önskelista</h1>
+        <p>
+          Den finaste presenten ni kan ge är att få är att vi får dela vår bröllopsdag med er. Vill ni
+          ändå gärna ge något extra så är här tips på saker som vi önskar oss!
+        </p>
+        <router-link
+          class="btn btn-custom text-white btn-block"
+          tag="button"
+          v-if="isAdmin"
+          :to="{ name: 'postwish' }"
+        >Ny önskesak</router-link>
       </div>
     </section>
-    <section class="dark">
+    <section class="dark d-flex-items-center">
       <div class="container">
         <div class="row">
-          <div v-for="wish in wishes" :key="wish.id" class="col-md-4 align-self-stretch">
-            <div class="card" style>
+          <div v-for="wish in wishes" :key="wish.id" class="col-md-4 wish">
+            <div class="card">
               <div>
-                <img v-if="wish.imagelink" :src="wish.imagelink" class="card-img-top" />
+                <img v-if="wish.imagelink" :src="wish.imagelink" />
               </div>
-              <div class="card-body text-dark">
-                <b>{{ wish.item }}</b>
-                <p>Antal kvar: {{ wish.amount - wish.given }}</p>
-                <p class="card-text"></p>
+              <div class="card-body text-dark flex-row" style="height: 100%;">
+                <div>
+                  <p>
+                    <b>{{ wish.item }}</b>
+                  </p>
+                  <p>Antal kvar: {{ wish.amount - wish.given }}</p>
+                  <p class="card-text"></p>
+                </div>
                 <div>
                   <router-link
                     tag="button"

@@ -1,6 +1,6 @@
 <template>
   <div id="osa-component">
-    <section class="white">
+    <section class="white d-flex align-items-center">
       <div class="container">
         <div class="align-self-center">
           <h1>O.S.A</h1>
@@ -11,7 +11,7 @@
         </div>
       </div>
     </section>
-    <section class="dark">
+    <section class="dark d-flex align-items-center">
       <div class="container">
         <form name="anmälan" method="POST" action="/tack" netlify data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="anmälan" />

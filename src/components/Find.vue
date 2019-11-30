@@ -1,16 +1,12 @@
 <template>
   <div id="fint-component">
-    <section class="white">
+    <section class="white d-flex align-items-center">
       <div class="container">
-        <div class="row">
-          <div class="align-self-center">
-            <h1>Hitta</h1>
-            <p>Om du är osäker på hur du hittar till vigselkyrkan eller festlokalen kan du ta hjälp av vägbeskrivningarna nedan.</p>
-          </div>
-        </div>
+        <h1>Hitta</h1>
+        <p>Om du är osäker på hur du hittar till vigselkyrkan eller festlokalen kan du ta hjälp av vägbeskrivningarna nedan.</p>
       </div>
     </section>
-    <section class="dark">
+    <section class="dark d-flex align-items-center">
       <div class="container">
         <div class="row">
           <div class="col-md-6 align-self-center">
@@ -25,7 +21,7 @@
         </div>
       </div>
     </section>
-    <section class="light">
+    <section class="light d-flex align-items-center">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
