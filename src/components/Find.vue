@@ -1,6 +1,6 @@
 <template>
   <div id="fint-component">
-    <section class="light">
+    <section class="white">
       <div class="container">
         <div class="row">
           <div class="align-self-center">

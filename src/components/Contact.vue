@@ -1,6 +1,6 @@
 <template>
   <div id="contact-component">
-    <section class="light">
+    <section class="white">
       <div class="container">
         <div class="align-self-center">
           <h1>Kontakt</h1>

@@ -1,6 +1,6 @@
 <template>
   <div id="wishlist-component">
-    <section class="dark">
+    <section class="white">
       <div class="container">
         <div class="row">
           <div class="align-self-center">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </section>
-    <section class="light">
+    <section class="dark">
       <div class="container">
         <div class="row">
           <div v-for="wish in wishes" :key="wish.id" class="col-md-4 align-self-stretch">
