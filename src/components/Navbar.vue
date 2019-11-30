@@ -1,6 +1,6 @@
 <template>
   <div id="navbar-component">
-    <nav>
+    <nav v-if="isAuth">
       <div class="d-flex flex-row justify-content-between container">
         <router-link :to="{ name: 'welcome' }">
           <span>Välkommen</span>
@@ -29,10 +29,13 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "navbar-component",
+  computed: {
+    ...mapState(["isAuth"])
+  },
   methods: {
     ...mapActions(["logout"])
   }
