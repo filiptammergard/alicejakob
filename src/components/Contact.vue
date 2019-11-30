@@ -4,18 +4,24 @@
       <div class="container">
         <div class="align-self-center">
           <h1>Kontakt</h1>
+          <p>Värdarna för bröllopsfesten är brudens tvillingbror Filip och hans fru Ida. Hör gärna av dig till dem om du har någon fråga om vad som helst som rör bröllopsfesten!</p>
+          <p>För att värdarna ska kunna planera bröllopsfesten på ett bra sätt önskar de att du hör av dig så tidigt som möjligt om du vill hålla tal eller spexa på festen. Helst genom att fylla i formuläret nedan, men det går också bra att meddela värdarna med någon av kontaktuppgifterna nedan. Försök så gott det går att anmäla tal eller spex innan den 20 juli.</p>
           <p>
-            Om du har en fråga eller vill komma i kontakt med värdarna av någon annan anledning går det bra att höra av sig till
-            <a
-              href="mailto:vardar@aliceochjakob.se"
-            >vardar@aliceochjakob.se</a>
+            <b>Filip: &nbsp;</b> 076-138 98 24
+          </p>
+          <p>
+            <b>Ida: &nbsp;</b> 073-890 31 86
+          </p>
+          <p>
+            <b>Båda: &nbsp;</b>
+            <a href="mailto:vardar@aliceochjakob.se">vardar@aliceochjakob.se</a>
           </p>
         </div>
       </div>
     </section>
     <section class="dark">
       <div class="container">
-        <h2>Hålla tal</h2>
+        <h2>Anmäl tal eller spex</h2>
         <p>Använd det här formuläret för att anmäla om du vill hålla tal eller spexa på bröllopsfesten. Värdarna kommer att höra av sig till dig när de har fått din anmälan om tal eller spex för vidare information.</p>
         <form
           name="talanmälan"
@@ -81,7 +87,7 @@
     <section class="light">
       <div class="container">
         <div class="align-self-center">
-          <h2>Kontakt brudparet</h2>
+          <h2>Kontakta brudparet</h2>
           <p>
             Om du har en fråga som behöver ställas direkt till brudparet kan du göra det via
             <a
