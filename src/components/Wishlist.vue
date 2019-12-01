@@ -23,26 +23,27 @@
               <div>
                 <img v-if="wish.imagelink" :src="wish.imagelink" />
               </div>
-              <div class="card-body text-dark flex-row" style="height: 100%;">
+              <div class="card-body text-dark" style="height: 100%;">
                 <div>
-                  <p>
-                    <b>{{ wish.item }}</b>
-                  </p>
-                  <p>Antal kvar: {{ wish.amount - wish.given }}</p>
-                  <p class="card-text"></p>
-                </div>
-                <div>
-                  <router-link
-                    tag="button"
-                    :to="{ name: 'wish', params: { id: wish.id } }"
-                    class="btn btn-custom btn-block text-white"
-                  >Visa önskesak</router-link>
-                  <router-link
-                    tag="button"
-                    v-if="isAdmin"
-                    :to="{ name: 'putwish', params: { id: wish.id } }"
-                    class="btn btn-warning btn-block"
-                  >Ändra önskesak</router-link>
+                  <div>
+                    <p>
+                      <b>{{ wish.item }}</b>
+                    </p>
+                    <p>Antal kvar: {{ wish.amount - wish.given }}</p>
+                    <p class="card-text"></p>
+                  </div>
+                  <div>
+                    <button
+                      @click="viewWish(wish)"
+                      class="btn btn-custom btn-block text-white"
+                    >Visa önskesak</button>
+                    <router-link
+                      tag="button"
+                      v-if="isAdmin"
+                      :to="{ name: 'putwish', params: { id: wish.id } }"
+                      class="btn btn-warning btn-block"
+                    >Ändra önskesak</router-link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -50,19 +51,104 @@
         </div>
       </div>
     </section>
+
+    <div class="opacity-overlay" :class="{ show: confirm }" @click="hideWish(); confirm=false"></div>
+
+    <div class="container container-fixed-centered" :class="{ hide: !confirm }">
+      <div class="card text-center shadow">
+        <h1 class="card-header">{{ wish.item }}</h1>
+        <div class="card-body" v-if="!booked">
+          <p>
+            Klicka på
+            <span class="btn btn-primary btn-sm btn-custom">+</span>- eller
+            <span class="btn btn-primary btn-sm btn-custom">−</span>-tecknet för att bestämma antalet av önskesaken
+            <strong>{{ wish.item }}</strong> du vill boka.
+          </p>
+          <p>
+            Specifikation:
+            <strong>{{ wish.specification }}</strong>
+          </p>
+          <p v-show="wish.link">
+            <a :href="wish.link" target="_blank">Länk</a>
+          </p>
+          <p>
+            Antal önskade:
+            <strong>{{ wish.amount }} st</strong>
+          </p>
+          <p>
+            Antal kvar:
+            <strong>{{ wish.amount - wish.given }} st</strong>
+          </p>
+          <div>
+            <br />
+            <button
+              class="btn btn-primary btn-sm btn-custom"
+              @click="wish.bookingAmount--"
+              :disabled="wish.bookingAmount<=1"
+            >−</button>
+            <button class="btn btn-primary btn-custom" @click="bookWishHandler(wish)">
+              Boka
+              <span>{{ wish.bookingAmount }}</span>
+            </button>
+            <button
+              class="btn btn-primary btn-sm btn-custom"
+              @click="wish.bookingAmount++"
+              :disabled="wish.bookingAmount>=(wish.amount-wish.given)"
+            >+</button>
+            <br />
+            <br />
+            <button class="btn btn-secondary" @click="confirm=false">Avbryt</button>
+          </div>
+        </div>
+        <div class="card-body" v-else>
+          <h2>Tack för din bokning!</h2>
+          <br />
+          <p>
+            Du har bokat
+            <strong>
+              {{ wish.bookingAmount }}
+              st
+            </strong> av önskesaken
+            <strong>{{ wish.item }}</strong>.
+          </p>
+          <p>
+            Om någonting blev fel eller om du har en fråga går det bra att höra av sig till
+            <router-link :to="{ name: 'contact'}">värdarna</router-link>&nbsp; så hjälper de dig. Tack!
+          </p>
+          <br />
+          <button
+            class="btn btn-primary btn-custom"
+            @click="hideWish(); confirm=false"
+          >Tillbaka till önskelistan</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "wishlist-component",
   data() {
-    return {};
+    return {
+      wish: "",
+      confirm: false
+    };
   },
   computed: {
-    ...mapState(["wishes", "isAdmin"])
+    ...mapState(["wishes", "isAdmin", "booked"])
+  },
+  methods: {
+    ...mapActions(["hideWish", "bookWish"]),
+    viewWish(wish) {
+      this.wish = wish;
+      this.confirm = true;
+    },
+    bookWishHandler(wish) {
+      this.bookWish(wish);
+    }
   }
 };
 </script>

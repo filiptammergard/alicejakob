@@ -1,52 +1,63 @@
 <template>
   <div id="putwish-component">
-    <h1>Ändra önskesak</h1>
-    <form @submit.prevent="putWish(wish)">
-      <div class="form-group">
-        <input
-          v-model="wish.item"
-          type="text"
-          autofocus
-          required
-          class="form-control"
-          placeholder="Sak"
-        />
+    <section class="white d-flex align-items-center">
+      <div class="container">
+        <h1>Ändra önskesak</h1>
+        <p>Ändra något i rutorna nedan för och klicka på "Ändra önskesak" så uppdateras saken i önskelistan.</p>
       </div>
-      <div class="form-group">
-        <input
-          v-model="wish.amount"
-          required
-          type="number"
-          class="form-control"
-          placeholder="Antal"
-        />
+    </section>
+
+    <section class="dark d-flex align-items-center">
+      <div class="container">
+        <h1>Ändra önskesak</h1>
+        <form @submit.prevent="putWish(wish)">
+          <div class="form-group">
+            <input
+              v-model="wish.item"
+              type="text"
+              autofocus
+              required
+              class="form-control"
+              placeholder="Sak"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              v-model="wish.amount"
+              required
+              type="number"
+              class="form-control"
+              placeholder="Antal"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              v-model="wish.specification"
+              type="text"
+              class="form-control"
+              placeholder="Specifikation"
+            />
+          </div>
+          <div class="form-group">
+            <input v-model="wish.link" type="text" class="form-control" placeholder="Länk" />
+          </div>
+          <div class="form-group">
+            <input v-model="wish.imagelink" type="text" class="form-control" placeholder="Bildlänk" />
+          </div>
+          <button
+            :disabled="!validWish"
+            type="submit"
+            class="btn btn-custom btn-block"
+          >Ändra önskesak</button>
+          <button class="btn btn-danger btn-block" @click="deleteWish()">Ta bort önskesak</button>
+          <router-link
+            class="btn btn-secondary btn-block"
+            tag="button"
+            :to="{ name: 'wishlist'}"
+          >Tillbaka till önskelistan</router-link>
+        </form>
       </div>
-      <div class="form-group">
-        <input
-          v-model="wish.specification"
-          type="text"
-          class="form-control"
-          placeholder="Specifikation"
-        />
-      </div>
-      <div class="form-group">
-        <input v-model="wish.link" type="text" class="form-control" placeholder="Länk" />
-      </div>
-      <div class="form-group">
-        <input v-model="wish.imagelink" type="text" class="form-control" placeholder="Bildlänk" />
-      </div>
-      <button
-        :disabled="!validWish"
-        type="submit"
-        class="btn btn-secondary btn-block"
-      >Ändra önskesak</button>
-      <button class="btn btn-danger btn-block" @click="deleteWish()">Ta bort önskesak</button>
-      <router-link
-        class="btn btn-secondary btn-block"
-        tag="button"
-        :to="{ name: 'wishlist'}"
-      >Tillbaka till önskelistan</router-link>
-    </form>
+    </section>
   </div>
 </template>
 

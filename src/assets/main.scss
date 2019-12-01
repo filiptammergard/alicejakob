@@ -87,3 +87,23 @@ section:not(.app-section) {
 img {
   width: 100%;
 }
+
+.btn-custom {
+  background-color: $third-color;
+}
+.btn-custom:hover {
+  background-color: darken($third-color, 10);
+}
+.btn-custom:active {
+  background-color: darken($third-color, 10) !important;
+}
+.btn-custom:disabled {
+  background-color: $third-color;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.btn-custom:disabled {
+  background-color: $third-color;
+  opacity: 0.5;
+  pointer-events: none;
+}

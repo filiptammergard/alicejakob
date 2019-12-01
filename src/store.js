@@ -19,7 +19,6 @@ export default new Vuex.Store({
 
     wishes: [],
 
-    unsubscribe: null,
     booked: false
   },
   mutations: {
@@ -30,20 +29,15 @@ export default new Vuex.Store({
       state.isAdmin = false;
       state.isAuth = false;
       state.isGuest = true;
-      //state.unsubscribe();
+    },
+    hideWish(state) {
+      setTimeout(() => {
+        state.booked = false;
+      }, 300);
     },
 
-    unsubscribeHandler(state, unsubscribe) {
-      state.unsubscribe = unsubscribe;
-    },
     updateWishes(state, wishes) {
       state.wishes = wishes;
-    },
-    nowAdmin(state) {
-      state.isAdmin = true;
-    },
-    nowLoggedIn(state) {
-      state.isGuest = true;
     },
     bookedTrue(state) {
       state.booked = true;
@@ -56,8 +50,7 @@ export default new Vuex.Store({
   },
   actions: {
     getWishes({ commit }) {
-      const unsubscribe = db
-        .collection("wishes")
+      db.collection("wishes")
         .orderBy("order")
         .onSnapshot(querySnapshot => {
           let wishes = [];
@@ -75,7 +68,6 @@ export default new Vuex.Store({
             });
           });
           commit("getWishes", wishes);
-          commit("unsubscribeHandler", unsubscribe);
         });
     },
     postWish(context, wish) {
@@ -171,15 +163,8 @@ export default new Vuex.Store({
       commit("logout");
       firebase.auth().signOut();
     },
-
-    updateWishes(context, wishes) {
-      context.commit("updateWishes", wishes);
-    },
-    nowAdmin({ commit }) {
-      commit("nowAdmin");
-    },
-    nowLoggedIn({ commit }) {
-      commit("nowLoggedIn");
+    hideWish({ commit }) {
+      commit("hideWish");
     },
     bookWish(context, wish) {
       db.collection("wishes")
@@ -193,11 +178,12 @@ export default new Vuex.Store({
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
       context.commit("bookedTrue");
-      //}
     },
-    bookedFalse({ commit }) {
-      commit("bookedFalse");
+
+    updateWishes(context, wishes) {
+      context.commit("updateWishes", wishes);
     },
+
     onEnd(context, e) {
       db.collection("wishes")
         .orderBy("order")
