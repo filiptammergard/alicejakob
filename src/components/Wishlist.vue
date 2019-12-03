@@ -17,6 +17,7 @@
     </section>
     <section class="dark d-flex-items-center">
       <div class="container">
+        <h2>Boka bröllopspresent</h2>
         <div class="row">
           <div v-for="wish in wishes" :key="wish.id" class="col-md-4 wish">
             <div class="card">
