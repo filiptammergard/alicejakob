@@ -7,10 +7,10 @@
       </main>
       <br />
     </section>
-    <!-- <div class="center">
+    <div class="center">
       <img class="logo" src="../public/logga2.png" />
-    </div>-->
-    <Footer />
+    </div>
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -18,13 +18,13 @@
 import { mapActions } from "vuex";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 export default {
   name: "app",
   components: {
-    Navbar,
-    Footer
+    Navbar
+    // Footer
   },
   created() {
     this.getWishes();

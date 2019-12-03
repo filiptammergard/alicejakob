@@ -20,7 +20,7 @@
         <div class="row">
           <div v-for="wish in wishes" :key="wish.id" class="col-md-4 wish">
             <div class="card">
-              <div>
+              <div :href="wish.link">
                 <img v-if="wish.imagelink" :src="wish.imagelink" />
               </div>
               <div class="card-body text-dark" style="height: 100%;">
@@ -36,7 +36,7 @@
                     <button
                       @click="viewWish(wish)"
                       class="btn btn-custom btn-block text-white"
-                    >Visa önskesak</button>
+                    >Visa och boka</button>
                     <router-link
                       tag="button"
                       v-if="isAdmin"
@@ -60,8 +60,8 @@
         <div class="card-body" v-if="!booked">
           <p>
             Klicka på
-            <span class="btn btn-primary btn-sm btn-custom">+</span>- eller
-            <span class="btn btn-primary btn-sm btn-custom">−</span>-tecknet för att bestämma antalet av önskesaken
+            <span class="btn btn-primary btn-sm btn-custom">+</span> eller
+            <span class="btn btn-primary btn-sm btn-custom">−</span> för att bestämma antalet av önskesaken
             <strong>{{ wish.item }}</strong> du vill boka.
           </p>
           <p>
