@@ -13,6 +13,7 @@
     </section>
     <section class="dark d-flex align-items-center">
       <div class="container">
+        <h2>Anmälan till bröllopsfesten</h2>
         <form name="anmälan" method="POST" action="/tack" netlify data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="anmälan" />
           <b for>Svar*</b>
