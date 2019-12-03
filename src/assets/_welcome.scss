@@ -1,5 +1,9 @@
 #welcome-component {
   h2 {
+    span:first-child {
+      color: black;
+      margin-left: 1rem;
+    }
     span:last-child {
       color: white;
       margin-left: 1rem;
