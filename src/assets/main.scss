@@ -150,6 +150,15 @@ section:not(.app-section) {
   background-position: center;
   background-repeat: no-repeat;
 }
+.section-image3 {
+  padding: 0;
+  width: 100%;
+  min-height: 25em;
+  background-image: url("./../public/par2.png");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
 
 .btn-custom {
   background-color: $third-color;

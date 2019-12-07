@@ -7,11 +7,11 @@
           <div class="col-md-6 text-right">
             <h1>Välkommen!</h1>
             <p>
-              Hej och välkommen till vår bröllopshemsida! Den 1 augusti 2020 ska vi säga JA till varandra
-              och vi hoppas att ni vill dela denna dag med oss! På den här hemsidan finns förhoppningsvis
-              allt ni behöver veta inför bröllopet, här kan ni exempelvis O.S.A. till bröllopet, få hjälp
-              att hitta till vigsel och fest och anmäla om ni vill bidra genom tal eller liknande på
-              bröllopsfesten.
+              Hej och välkommen till vår bröllopshemsida! Den 1 augusti 2020 ska vi säga JA till
+              varandra och vi hoppas att ni vill dela denna dag med oss! På den här hemsidan finns
+              förhoppningsvis allt ni behöver veta inför bröllopet, här kan ni exempelvis O.S.A.
+              till bröllopet, få hjälp att hitta till vigsel och fest och anmäla om ni vill bidra
+              genom tal eller liknande på bröllopsfesten.
             </p>
           </div>
         </div>
@@ -34,12 +34,14 @@
               <span>Fest</span>
               <span>Marma Gård</span>
             </h2>
+            <h2>
+              <span>Klädsel</span>
+              <span>Festfin</span>
+            </h2>
           </div>
         </div>
       </div>
-      <div class="col-md-6 section-image">
-        <img class="section-image" src="../../public/par2.png" alt="Alice &amp; Jakob" />
-      </div>
+      <div class="col-md-6 section-image3"></div>
     </section>
   </div>
 </template>

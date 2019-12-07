@@ -10,6 +10,10 @@ html {
       margin: 0 calc(-50vw + 50%);
     }
 
+    #login-form {
+      min-height: 50vh;
+    }
+
     section.front-image {
       height: 100vh;
     }
