@@ -6,9 +6,10 @@
 @import "countdown";
 @import "wishlist";
 @import "wish";
+@import "login";
 
 #app section:not(.light):not(.dark):not(.white) {
-  min-height: calc(100vh - 20rem);
+  min-height: calc(100vh);
 }
 
 body {
@@ -22,6 +23,7 @@ h1 {
 h2 {
   font-family: "Allura", cursive;
   font-size: 2rem;
+  white-space: nowrap;
 }
 p {
   font-family: "Open Sans", sans-serif;
@@ -53,6 +55,9 @@ main {
 .center {
   text-align: center;
 }
+.logo-container {
+  height: 20vh;
+}
 img.logo {
   width: 50%;
   margin: auto;
@@ -67,7 +72,6 @@ img.logo {
 }
 section:not(.app-section) {
   margin: 0 calc(-50vw + 50%);
-  padding: 4rem 0;
   color: white;
 
   &.white {
@@ -82,9 +86,63 @@ section:not(.app-section) {
   &.light {
     background-color: $secondary-color;
   }
+
+  &:not(.contains-image) {
+    padding: 4rem 0;
+  }
 }
-img {
+.front-image {
+  background-image: url("./../public/front.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(50vh - 64px);
+}
+
+#login-component {
+  .front-image {
+    background-position: center center;
+  }
+}
+
+@media (max-width: 959px) {
+  .front-image {
+    background-image: url("./../public/front-md.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 64px);
+  }
+}
+
+@media (max-width: 959px) {
+  .height-on-small {
+    height: 15rem;
+  }
+  .height-on-small2 {
+    height: 25rem;
+  }
+}
+.height-on-small2 {
+  padding: 4rem 0;
+}
+
+.section-image {
+  padding: 0;
   width: 100%;
+  background-image: url("./../public/danmark.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-image2 {
+  padding: 0;
+  width: 100%;
+  background-image: url("./../public/marma.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .btn-custom {
@@ -105,4 +163,7 @@ img {
   background-color: $third-color;
   opacity: 0.5;
   pointer-events: none;
+}
+.to-edges {
+  margin: 0 calc(-50vw + 50%);
 }
