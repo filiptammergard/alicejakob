@@ -179,11 +179,9 @@ export default new Vuex.Store({
         });
       context.commit("bookedTrue");
     },
-
     updateWishes(context, wishes) {
       context.commit("updateWishes", wishes);
     },
-
     onEnd(context, e) {
       db.collection("wishes")
         .orderBy("order")

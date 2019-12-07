@@ -13,9 +13,6 @@ html {
     section.front-image {
       height: 100vh;
     }
-    section#login-form {
-      height: 100vh;
-    }
     .scroll-down {
       opacity: 1;
       -webkit-transition: all 0.5s ease-in 3s;
@@ -77,6 +74,10 @@ html {
         -ms-transform: translateY(-5px);
         transform: translateY(-5px);
       }
+    }
+
+    #login-form {
+      color: white;
     }
   }
 }

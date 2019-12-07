@@ -1,7 +1,7 @@
 <template>
   <div id="welcome-component">
-    <section class="white front-image">
-      <div class="container">
+    <section class="white front-image background-element">
+      <div class="container base-element">
         <div class="row">
           <div class="col-md-6"></div>
           <div class="col-md-6 text-right">

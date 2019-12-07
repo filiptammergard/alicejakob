@@ -30,7 +30,7 @@ p {
   font-family: 1rem;
 }
 main {
-  a:link {
+  a:link:not(.imagelink) {
     text-decoration: none;
     color: black;
     background: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
@@ -56,7 +56,7 @@ main {
   text-align: center;
 }
 .logo-container {
-  height: 20vh;
+  height: 15rem;
 }
 img.logo {
   width: 50%;
@@ -72,7 +72,6 @@ img.logo {
 }
 section:not(.app-section) {
   margin: 0 calc(-50vw + 50%);
-  color: white;
 
   &.white {
     background-color: none;
@@ -81,6 +80,7 @@ section:not(.app-section) {
 
   &.dark {
     background-color: $primary-color;
+    color: white;
   }
 
   &.light {
@@ -88,7 +88,7 @@ section:not(.app-section) {
   }
 
   &:not(.contains-image) {
-    padding: 4rem 0;
+    padding: 4rem 0 3rem 0;
   }
 }
 .front-image {
@@ -97,6 +97,10 @@ section:not(.app-section) {
   background-position: center;
   background-repeat: no-repeat;
   height: calc(50vh - 64px);
+
+  -webkit-box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
 }
 
 #login-component {
@@ -124,12 +128,13 @@ section:not(.app-section) {
   }
 }
 .height-on-small2 {
-  padding: 4rem 0;
+  padding: 4rem 0rem;
 }
 
 .section-image {
   padding: 0;
   width: 100%;
+  min-height: 25em;
   background-image: url("./../public/danmark.png");
   background-size: cover;
   background-position: center;
@@ -139,6 +144,7 @@ section:not(.app-section) {
 .section-image2 {
   padding: 0;
   width: 100%;
+  min-height: 25em;
   background-image: url("./../public/marma.png");
   background-size: cover;
   background-position: center;
@@ -166,4 +172,10 @@ section:not(.app-section) {
 }
 .to-edges {
   margin: 0 calc(-50vw + 50%);
+}
+
+.base-element {
+}
+
+.background-element {
 }

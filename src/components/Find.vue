@@ -7,7 +7,7 @@
       </div>
     </section>
 
-    <section id="info" class="dark row contains-image">
+    <section class="dark row contains-image">
       <div class="container col-md-6 d-flex align-items-center">
         <div class="height-on-small2 d-flex align-items-center">
           <div>
