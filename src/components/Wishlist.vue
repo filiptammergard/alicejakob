@@ -214,8 +214,6 @@ export default {
       },
       set(wishes) {
         this.updateWishes(wishes);
-        // eslint-disable-next-line no-console
-        console.log(wishes);
       }
     }
   },
@@ -228,6 +226,9 @@ export default {
     bookWishHandler(wish) {
       this.bookWish(wish);
     }
+  },
+  beforeDestroy() {
+    this.hideWish();
   }
 };
 </script>
