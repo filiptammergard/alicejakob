@@ -2,19 +2,18 @@
   .front-image {
     height: calc(100vh - 4rem);
   }
-  h2 {
-    span:first-child {
+  tr {
+    td:first-child {
+      padding: 0 1rem;
       color: black;
-      margin-left: 1rem;
     }
-    span:last-child {
+    td:last-child {
+      padding: 0 1rem;
       color: white;
-      margin-left: 1rem;
     }
   }
 
   .scroll-down {
-    opacity: 1;
     -webkit-transition: all 0.5s ease-in 3s;
     transition: all 0.5s ease-in 3s;
   }

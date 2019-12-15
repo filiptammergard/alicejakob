@@ -45,7 +45,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Till exempel brudgummens gammelfarbror"
+                placeholder="Till exempel brudens gammelfarbror"
                 name="Relation till brudparet"
                 required
               />
@@ -85,11 +85,16 @@
     <section class="light d-flex align-items-center">
       <div class="container">
         <h2>Kontakta brudparet</h2>
+        <p>Om du har en fråga som behöver ställas direkt till brudparet kan du göra det via någon av följande kontaktuppgifter:</p>
         <p>
-          Om du har en fråga som behöver ställas direkt till brudparet kan du göra det via
-          <a
-            href="mailto:brudparet@aliceochjakob.se"
-          >brudparet@aliceochjakob.se</a>.
+          <b>Alice: &nbsp;</b> 070-394 62 66
+        </p>
+        <p>
+          <b>Jakob: &nbsp;</b> 073-827 92 99
+        </p>
+        <p>
+          <b>Båda: &nbsp;</b>
+          <a href="mailto:brudparet@aliceochjakob.se">brudparet@aliceochjakob.se</a>
         </p>
       </div>
     </section>

@@ -22,7 +22,7 @@
     </section>
 
     <section id="info" class="light row contains-image">
-      <div class="col-md-6 section-image2"></div>
+      <div class="col-md-6 section-image2 hide-on-small"></div>
       <div class="container col-md-6 d-flex align-items-center">
         <div class="height-on-small2 d-flex align-items-center">
           <div>
@@ -33,6 +33,7 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6 section-image2 hide-on-large"></div>
     </section>
   </div>
 </template>

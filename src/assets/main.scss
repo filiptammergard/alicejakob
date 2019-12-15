@@ -56,12 +56,23 @@ main {
   text-align: center;
 }
 .logo-container {
-  height: 15rem;
+  height: 7rem;
 }
 img.logo {
-  width: 50%;
+  width: 20rem;
   margin: auto;
 }
+
+@media (max-width: 767px) {
+  .logo-container {
+    height: 6rem;
+  }
+  img.logo {
+    width: 15rem;
+    margin: auto;
+  }
+}
+
 .btn-custom {
   background-color: rgb(182, 164, 149);
   border: none;
@@ -150,6 +161,20 @@ section:not(.app-section) {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.hide-on-large {
+  display: none;
+}
+@media (max-width: 767px) {
+  .hide-on-small {
+    display: none;
+  }
+
+  .hide-on-large {
+    display: block;
+  }
+}
+
 .section-image3 {
   padding: 0;
   width: 100%;

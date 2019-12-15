@@ -20,24 +20,42 @@
     </section>
     <section id="info" class="dark row contains-image">
       <div class="container col-md-6 d-flex align-items-center">
-        <div class="height-on-small d-flex align-items-center">
-          <div>
-            <h2>
-              <span>Datum</span>
-              <span>1 augusti 2020</span>
-            </h2>
-            <h2>
-              <span>Vigsel</span>
-              <span>Danmarks Kyrka</span>
-            </h2>
-            <h2>
-              <span>Fest</span>
-              <span>Marma Gård</span>
-            </h2>
-            <h2>
-              <span>Klädsel</span>
-              <span>Festfin</span>
-            </h2>
+        <div class="height-on-small d-flex align-items-center" style="width: 100%;">
+          <div style="width:75%;max-width:30rem;">
+            <table style="width:100%">
+              <tr>
+                <td>
+                  <h2>Datum</h2>
+                </td>
+                <td>
+                  <h2>1 augusti 2020</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Vigsel</h2>
+                </td>
+                <td>
+                  <h2>Danmarks Kyrka</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Fest</h2>
+                </td>
+                <td>
+                  <h2>Marma Gård</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Klädsel</h2>
+                </td>
+                <td>
+                  <h2>Festfin</h2>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
