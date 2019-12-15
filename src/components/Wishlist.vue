@@ -12,8 +12,7 @@
           tag="button"
           v-if="isAdmin"
           :to="{ name: 'postwish' }"
-          >Ny önskesak</router-link
-        >
+        >Ny önskesak</router-link>
       </div>
     </section>
 
@@ -24,7 +23,7 @@
         <draggable v-model="wishes" @end="onEnd" class="row">
           <div class="col-md-4 wish" v-for="wish in wishes" :key="wish.id">
             <div class="card">
-              <div>
+              <div style="margin-top:0.5rem;">
                 <a class="imagelink" :href="wish.link" target="_blank">
                   <img v-if="wish.imagelink" :src="wish.imagelink" />
                 </a>
@@ -35,19 +34,25 @@
                     <p>
                       <b>{{ wish.item }}</b>
                     </p>
-                    <p>Antal kvar: {{ wish.amount - wish.given }}</p>
+                    <p v-if="wish.amount!=100">Antal kvar: {{ wish.amount - wish.given }}</p>
                     <p class="card-text"></p>
                   </div>
                   <div>
-                    <button @click="viewWish(wish)" class="btn btn-custom btn-block text-white">
-                      Visa och boka
-                    </button>
+                    <button
+                      @click="viewWish(wish)"
+                      class="btn btn-custom btn-block text-white"
+                      v-if="wish.amount==100"
+                    >Visa</button>
+                    <button
+                      @click="viewWish(wish)"
+                      class="btn btn-custom btn-block text-white"
+                      v-else
+                    >Visa och boka</button>
                     <router-link
                       tag="button"
                       :to="{ name: 'putwish', params: { id: wish.id } }"
                       class="btn btn-warning btn-block"
-                      >Ändra önskesak</router-link
-                    >
+                    >Ändra önskesak</router-link>
                   </div>
                 </div>
               </div>
@@ -63,7 +68,7 @@
         <div class="row">
           <div v-for="wish in wishes" :key="wish.id" class="col-md-4 wish">
             <div class="card">
-              <div>
+              <div style="margin-top:0.5rem;">
                 <a class="imagelink" :href="wish.link" target="_blank">
                   <img v-if="wish.imagelink" :src="wish.imagelink" />
                 </a>
@@ -74,13 +79,20 @@
                     <p>
                       <b>{{ wish.item }}</b>
                     </p>
-                    <p>Antal kvar: {{ wish.amount - wish.given }}</p>
+                    <p v-if="wish.amount!=100">Antal kvar: {{ wish.amount - wish.given }}</p>
                     <p class="card-text"></p>
                   </div>
                   <div>
-                    <button @click="viewWish(wish)" class="btn btn-custom btn-block text-white">
-                      Visa och boka
-                    </button>
+                    <button
+                      @click="viewWish(wish)"
+                      class="btn btn-custom btn-block text-white"
+                      v-if="wish.amount==100"
+                    >Visa</button>
+                    <button
+                      @click="viewWish(wish)"
+                      class="btn btn-custom btn-block text-white"
+                      v-else
+                    >Visa och boka</button>
                   </div>
                 </div>
               </div>
@@ -103,48 +115,47 @@
       <div class="card text-center shadow">
         <h2 class="card-header">{{ wish.item }}</h2>
         <div class="card-body" v-if="!booked">
-          <p>
+          <p v-if="wish.amount!=100">
             Klicka på
             <span class="btn btn-primary btn-sm btn-custom">+</span> eller
             <span class="btn btn-primary btn-sm btn-custom">−</span> för att bestämma antalet av
-            önskesaken <strong>{{ wish.item }}</strong> du vill boka.
+            önskesaken
+            <strong>{{ wish.item }}</strong> du vill boka.
           </p>
-          <p>
-            Specifikation:
-            <strong>{{ wish.specification }}</strong>
+          <p v-if="wish.specification">
+            <span v-if="wish.amount!=100">Specifikation: &nbsp;</span>
+            <strong v-if="wish.amount!=100">{{ wish.specification }}</strong>
+            <span v-else>{{ wish.specification}}</span>
           </p>
           <p v-show="wish.link">
             <a :href="wish.link" target="_blank">Länk</a>
           </p>
-          <p>
+          <p v-if="wish.amount!=100">
             Antal önskade:
             <strong>{{ wish.amount }} st</strong>
           </p>
-          <p>
+          <p v-if="wish.amount!=100">
             Antal kvar:
             <strong>{{ wish.amount - wish.given }} st</strong>
           </p>
           <div>
-            <br />
-            <button
-              class="btn btn-primary btn-sm btn-custom"
-              @click="wish.bookingAmount--"
-              :disabled="wish.bookingAmount <= 1"
-            >
-              −
-            </button>
-            <button class="btn btn-primary btn-custom" @click="bookWishHandler(wish)">
-              Boka
-              <span>{{ wish.bookingAmount }}</span>
-            </button>
-            <button
-              class="btn btn-primary btn-sm btn-custom"
-              @click="wish.bookingAmount++"
-              :disabled="wish.bookingAmount >= wish.amount - wish.given"
-            >
-              +
-            </button>
-            <br />
+            <div v-if="wish.amount!=100">
+              <br />
+              <button
+                class="btn btn-primary btn-sm btn-custom"
+                @click="wish.bookingAmount--"
+                :disabled="wish.bookingAmount <= 1"
+              >−</button>
+              <button class="btn btn-primary btn-custom" @click="bookWishHandler(wish)">
+                Boka
+                <span>{{ wish.bookingAmount }}</span>
+              </button>
+              <button
+                class="btn btn-primary btn-sm btn-custom"
+                @click="wish.bookingAmount++"
+                :disabled="wish.bookingAmount >= wish.amount - wish.given"
+              >+</button>
+            </div>
             <br />
             <button class="btn btn-secondary" @click="confirm = false">Avbryt</button>
           </div>
@@ -158,8 +169,8 @@
               {{ wish.bookingAmount }}
               st
             </strong>
-            av önskesaken <strong>{{ wish.item }}</strong
-            >.
+            av önskesaken
+            <strong>{{ wish.item }}</strong>.
           </p>
           <p>
             Om någonting blev fel eller om du har en fråga går det bra att höra av sig till
@@ -173,9 +184,7 @@
               hideWish();
               confirm = false;
             "
-          >
-            Tillbaka till önskelistan
-          </button>
+          >Tillbaka till önskelistan</button>
         </div>
       </div>
     </div>
