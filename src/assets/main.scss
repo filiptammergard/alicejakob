@@ -120,7 +120,7 @@ section:not(.app-section) {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: calc(50vh - 64px);
+  height: calc(100vh - 64px);
 
   -webkit-box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
