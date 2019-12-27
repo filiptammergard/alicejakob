@@ -30,7 +30,7 @@
         >
           <div style="width:75%;max-width:30rem;">
             <table
-              style="width:100%; font-size: 1.5rem; position:relative;
+              style="width:100%; position:relative;
         left: 50%;
         transform: translateX(-50%);
         width: auto;"
