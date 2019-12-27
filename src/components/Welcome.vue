@@ -29,7 +29,12 @@
           style="width: 100%;"
         >
           <div style="width:75%;max-width:30rem;">
-            <table style="width:100%">
+            <table
+              style="width:100%; font-size: 1.5rem; position:relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;"
+            >
               <tr>
                 <td>
                   <h2>Datum</h2>
