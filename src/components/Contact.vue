@@ -19,7 +19,7 @@
     </section>
     <section class="dark d-flex align-items-center">
       <div class="container">
-        <h2>Anmäl tal eller spex</h2>
+        <h2>Anmäl bidrag till bröllopsfesten</h2>
         <p>Använd det här formuläret för att anmäla om du vill hålla tal eller liknande på bröllopsfesten. Värdarna kommer att höra av sig till dig när de har fått din anmälan om tal eller spex för vidare information.</p>
         <form
           name="talanmälan"
