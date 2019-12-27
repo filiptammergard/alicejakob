@@ -2,7 +2,7 @@
   <div id="login-component">
     <section class="front-image">
       <div class="container">
-        <div class="row">
+        <div class="row glow">
           <div class="col-md-6"></div>
           <div class="col-md-6 text-right">
             <h1>Välkommen!</h1>
@@ -95,3 +95,11 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.glow {
+  color: black;
+  text-shadow: 0 0 20px #d8d8d8, 0 0 30px #d8d8d8, 0 0 40px #d8d8d8,
+    0 0 50px #d8d8d8, 0 0 60px #d8d8d8, 0 0 70px #d8d8d8, 0 0 80px #d8d8d8,
+    0 0 90px #d8d8d8, 0 0 100px #d8d8d8;
+}
+</style>
