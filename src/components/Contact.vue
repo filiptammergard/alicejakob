@@ -4,7 +4,7 @@
       <div class="container">
         <h1>Kontakt</h1>
         <p>Värdarna för bröllopsfesten är brudens tvillingbror Filip och hans fru Ida. Hör gärna av dig till dem om du har någon fråga om vad som helst som rör bröllopsfesten!</p>
-        <p>För att värdarna ska kunna planera bröllopsfesten på ett bra sätt önskar de att du hör av dig så tidigt som möjligt om du vill hålla tal eller liknande på festen. Helst genom att fylla i formuläret nedan, men det går också bra att meddela värdarna med någon av kontaktuppgifterna nedan. Försök så gott det går att anmäla tal eller spex innan den 20 juli.</p>
+        <p>För att värdarna ska kunna planera bröllopsfesten på ett bra sätt önskar de att du hör av dig så tidigt som möjligt om du vill hålla tal eller liknande på festen. Helst genom att fylla i formuläret nedan, men det går också bra att meddela värdarna genom någon av kontaktuppgifterna nedan. Försök så gott det går att anmäla tal eller spex innan den 20 juli.</p>
         <p>
           <b>Filip: &nbsp;</b> 076-138 98 24
         </p>
