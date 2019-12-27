@@ -1,12 +1,12 @@
 <template>
   <div id="welcome-component">
-    <section class="white front-image background-element">
+    <section class="white front-image-color background-element">
       <div class="container base-element">
         <div class="row">
           <div class="col-md-6"></div>
           <div class="col-md-6 text-right">
             <h1>Välkommen!</h1>
-            <p>
+            <p class="glow">
               Hej och välkommen till vår bröllopshemsida! Den 1 augusti 2020 ska vi säga JA till
               varandra och vi hoppas att ni vill dela denna dag med oss! På den här hemsidan finns
               förhoppningsvis allt ni behöver veta inför bröllopet, här kan ni exempelvis O.S.A.
@@ -69,3 +69,12 @@ export default {
   name: "welcome-component"
 };
 </script>
+
+<style lang="scss" scoped>
+.glow {
+  color: black;
+  text-shadow: 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px lightblue,
+    0 0 50px lightblue, 0 0 60px lightblue, 0 0 70px lightblue,
+    0 0 80px lightblue, 0 0 90px lightblue, 0 0 100px lightblue;
+}
+</style>

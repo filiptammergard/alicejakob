@@ -102,8 +102,21 @@ section:not(.app-section) {
     padding: 4rem 0 3rem 0;
   }
 }
+
 .front-image {
   background-image: url("./../public/front.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(50vh - 64px);
+
+  -webkit-box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0px -100px 50px -20px rgba(0, 0, 0, 0.9);
+}
+
+.front-image-color {
+  background-image: url("./../public/front-color.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -123,6 +136,14 @@ section:not(.app-section) {
 @media (max-width: 959px) {
   .front-image {
     background-image: url("./../public/front-md.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 64px);
+  }
+
+  .front-image-color {
+    background-image: url("./../public/front-color-md.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
