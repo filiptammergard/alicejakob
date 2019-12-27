@@ -29,7 +29,7 @@
             <h2>Marma Gård</h2>
             <p>Tid: Återkommer</p>
             <p>Adress: Marma 113, Knivsta</p>
-            <p>Vi ser fram emot att samla våra familjer och vänner efter vigseln, ni betyder mycket för oss! Bröllopsfesten kommer hållas i Marmasalen på Marma Gård strax utanför Knivsta, cirka 10 minuters bilfärd vidare från Danmarks kyrka.</p>
+            <p>Vi ser fram emot att samla våra familjer och vänner efter vigseln, ni betyder mycket för oss! Bröllopsfesten kommer hållas i Marmasalen på Marma Gård strax utanför Knivsta, cirka 10 minuters bilfärd från Danmarks kyrka.</p>
           </div>
         </div>
       </div>
