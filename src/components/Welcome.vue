@@ -43,7 +43,7 @@
                   <h2>Vigsel</h2>
                 </td>
                 <td>
-                  <h2>Danmarks Kyrka</h2>
+                  <h2>Danmarks kyrka</h2>
                 </td>
               </tr>
               <tr>
@@ -78,10 +78,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// .glow {
+//   color: black;
+//   text-shadow: 0 0 20px #bfdbf1, 0 0 30px #bfdbf1, 0 0 40px #bfdbf1,
+//     0 0 50px #bfdbf1, 0 0 60px #bfdbf1, 0 0 70px #bfdbf1, 0 0 80px #bfdbf1,
+//     0 0 90px #bfdbf1, 0 0 100px #bfdbf1;
+// }
+
 .glow {
   color: black;
-  text-shadow: 0 0 20px #bfdbf1, 0 0 30px #bfdbf1, 0 0 40px #bfdbf1,
-    0 0 50px #bfdbf1, 0 0 60px #bfdbf1, 0 0 70px #bfdbf1, 0 0 80px #bfdbf1,
-    0 0 90px #bfdbf1, 0 0 100px #bfdbf1;
+  text-shadow: 0 0 20px #bfdbf1, 0 0 30px #bfdbf1, 0 0 40px #bfdbf1;
 }
 </style>
