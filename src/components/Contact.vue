@@ -85,7 +85,7 @@
     <section class="light d-flex align-items-center">
       <div class="container">
         <h2>Kontakta brudparet</h2>
-        <p>Om du har en fråga som behöver ställas direkt till brudparet kan du göra det via någon av följande kontaktuppgifter:</p>
+        <p>Om du har en fråga som du vill ställa direkt till brudparet kan du göra det via någon av följande kontaktuppgifter:</p>
         <p>
           <b>Alice: &nbsp;</b> 070-394 62 66
         </p>
