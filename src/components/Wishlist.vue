@@ -5,7 +5,8 @@
         <h1>Önskelista</h1>
         <p>
           Den finaste presenten ni kan ge är att vi får dela vår bröllopsdag med er. Vill
-          ni ändå gärna ge något extra så är här tips på saker som vi önskar oss!
+          ni ändå gärna ge något extra så är detta tips på saker vi önskar oss! Om ni väljer att ge något av tipsen från listan, se till att använda bokningsfunktionen. Om det skulle bli fel eller om ni har andra frågor, kontakt
+          <a target="_blank" href="https://tammergard.se/kontakt/">Filip</a> så hjälper han er.
         </p>
         <router-link
           class="btn btn-custom text-white btn-block"
