@@ -73,8 +73,8 @@ export default {
 <style lang="scss" scoped>
 .glow {
   color: black;
-  text-shadow: 0 0 20px #a0caed, 0 0 30px #a0caed, 0 0 40px #a0caed,
-    0 0 50px #a0caed, 0 0 60px #a0caed, 0 0 70px #a0caed, 0 0 80px #a0caed,
-    0 0 90px #a0caed, 0 0 100px #a0caed;
+  text-shadow: 0 0 20px #bfdbf1, 0 0 30px #bfdbf1, 0 0 40px #bfdbf1,
+    0 0 50px #bfdbf1, 0 0 60px #bfdbf1, 0 0 70px #bfdbf1, 0 0 80px #bfdbf1,
+    0 0 90px #bfdbf1, 0 0 100px #bfdbf1;
 }
 </style>
