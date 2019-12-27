@@ -156,6 +156,11 @@ section:not(.app-section) {
   }
 }
 
+.height-on-small,
+.height-on-small2 {
+  padding: 4rem 2rem;
+}
+
 @media (max-width: 959px) {
   .height-on-small {
     height: 15rem;
@@ -164,8 +169,13 @@ section:not(.app-section) {
     height: 25rem;
   }
 }
-.height-on-small2 {
-  padding: 4rem 0rem;
+@media (max-width: 767px) {
+  .height-on-small {
+    padding: 4rem 0rem;
+  }
+  .height-on-small2 {
+    padding: 4rem 0rem;
+  }
 }
 
 .section-image {
