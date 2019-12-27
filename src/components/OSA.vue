@@ -5,7 +5,7 @@
         <div class="align-self-center">
           <h1>O.S.A</h1>
           <p>
-            I det här formuläret kan du som har fått en inbjudan i brevlådan meddela om du kan komma eller inte på bröllopsfesten. Om du inte kan komma vill vi veta även det, men då går det också bra att meddela det på något annat sätt om det känns smidigare. Om du upplever att formuläret är knepigt går det även att höra av sig till värdarna på annat sätt i fliken
+            I det här formuläret kan du som har fått en inbjudan i brevlådan meddela om du kan komma eller inte på bröllopsfesten. Det går också bra att anmäla eller meddela att du inte kan komma genom att höra av dig till värdarna på annat sätt, se kontaktuppgifter i fliken
             <router-link :to="{ name: 'contact' }">Kontakt</router-link>.
           </p>
         </div>
