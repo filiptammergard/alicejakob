@@ -9,9 +9,13 @@
             <p class="glow">
               Hej och välkommen till vår bröllopshemsida! Den 1 augusti 2020 ska vi säga JA till
               varandra och vi hoppas att ni vill dela denna dag med oss! På den här hemsidan finns
-              förhoppningsvis allt ni behöver veta inför bröllopet, här kan ni exempelvis O.S.A.
-              till bröllopet, få hjälp att hitta till vigsel och fest och anmäla om ni vill bidra
-              genom tal eller liknande på bröllopsfesten.
+              förhoppningsvis allt ni behöver veta inför bröllopet, här kan ni exempelvis
+              <router-link :to="{ name: 'osa'}">anmäla er till bröllopsfesten</router-link>,
+              <router-link :to="{ name: 'find'}">få hjälp att hitta till vigsel och fest</router-link>&nbsp;och
+              <router-link :to="{ name: 'contact'}">
+                anmäla om ni vill bidra
+                genom tal eller liknande på bröllopsfesten.
+              </router-link>
             </p>
           </div>
         </div>
@@ -20,7 +24,10 @@
     </section>
     <section id="info" class="dark row contains-image">
       <div class="container col-md-6 d-flex align-items-center">
-        <div class="height-on-small d-flex align-items-center" style="width: 100%;">
+        <div
+          class="height-on-small d-flex align-items-center justify-content-center"
+          style="width: 100%;"
+        >
           <div style="width:75%;max-width:30rem;">
             <table style="width:100%">
               <tr>
