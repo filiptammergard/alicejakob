@@ -26,7 +26,9 @@
             <p>
               För att få tillgång till hemsidan behöver du ange lösenordet som står på inbjudan till
               bröllopet. Om du har tappat bort inbjudan kan du mejla
-              <a href="mailto:brudparet@aliceochjakob.se">brudparet@aliceochjakob.se</a> för att få
+              <a
+                href="mailto:brudparet@aliceochjakob.se"
+              >brudparet@aliceochjakob.se</a> för att få
               lösenordet igen.
             </p>
             <form @submit.prevent="login">
@@ -39,9 +41,7 @@
                   placeholder="Lösenord"
                 />
               </div>
-              <button type="submit" class="btn btn-custom btn-block text-white">
-                {{ loginBtnText }}
-              </button>
+              <button type="submit" class="btn btn-custom btn-block text-white">{{ loginBtnText }}</button>
             </form>
           </div>
           <div class="col-md-3"></div>
@@ -76,7 +76,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["login"]),
+    ...mapActions(["login", "getWishes"]),
     async login() {
       this.loginBtnText = "Loggar in...";
       await firebase
@@ -84,6 +84,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           this.$router.push({ name: "welcome" });
+          this.getWishes();
         })
         .catch(() => {
           alert("Fel lösenord. Försök igen.");

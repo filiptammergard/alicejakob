@@ -3,7 +3,7 @@
     <OSA />
     <div class="to-edges">
       <div class="center logo-container d-flex aligm-items-center">
-        <img class="logo" src="../../public/logga2.png" />
+        <img class="logo" src="../../public/logga.png" />
       </div>
       <Footer />
     </div>

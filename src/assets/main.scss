@@ -104,7 +104,7 @@ section:not(.app-section) {
 }
 
 .front-image {
-  background-image: url("./../public/front.png");
+  background-image: url("./../public/front-bw.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -116,7 +116,7 @@ section:not(.app-section) {
 }
 
 .front-image-color {
-  background-image: url("./../public/front-color.png");
+  background-image: url("./../public/front-c.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +135,7 @@ section:not(.app-section) {
 
 @media (max-width: 959px) {
   .front-image {
-    background-image: url("./../public/front-md.png");
+    background-image: url("./../public/front-bw-md.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,7 +143,7 @@ section:not(.app-section) {
   }
 
   .front-image-color {
-    background-image: url("./../public/front-color-md.png");
+    background-image: url("./../public/front-c-md.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -200,7 +200,7 @@ section:not(.app-section) {
   padding: 0;
   width: 100%;
   min-height: 25em;
-  background-image: url("./../public/par2.png");
+  background-image: url("./../public/par.png");
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
