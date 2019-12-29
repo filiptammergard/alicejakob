@@ -35,20 +35,11 @@
                     <p>
                       <b>{{ wish.item }}</b>
                     </p>
-                    <p v-if="wish.amount!=100">Antal kvar: {{ wish.amount - wish.given }}</p>
+                    <p v-if="wish.amount!=100">Antal önskade: {{ wish.amount }}</p>
                     <p class="card-text"></p>
                   </div>
                   <div>
-                    <button
-                      @click="viewWish(wish)"
-                      class="btn btn-custom btn-block text-white"
-                      v-if="wish.amount==100"
-                    >Visa</button>
-                    <button
-                      @click="viewWish(wish)"
-                      class="btn btn-custom btn-block text-white"
-                      v-else
-                    >Visa och boka</button>
+                    <button @click="viewWish(wish)" class="btn btn-custom btn-block text-white">Visa</button>
                     <router-link
                       tag="button"
                       :to="{ name: 'putwish', params: { id: wish.id } }"
@@ -67,7 +58,12 @@
       <div class="container">
         <h2>Boka bröllopspresent</h2>
         <div class="row">
-          <div v-for="wish in wishes" :key="wish.id" class="col-md-4 wish">
+          <div
+            v-for="wish in wishes"
+            :key="wish.id"
+            class="col-md-4 wish"
+            :class="{ transparentWish: wish.amount-wish.given === 0 }"
+          >
             <div class="card">
               <div style="margin-top:0.5rem;">
                 <a class="imagelink" :href="wish.link" target="_blank">
@@ -92,6 +88,7 @@
                     <button
                       @click="viewWish(wish)"
                       class="btn btn-custom btn-block text-white"
+                      :disabled="wish.amount-wish.given === 0"
                       v-else
                     >Visa och boka</button>
                   </div>
@@ -112,7 +109,56 @@
       "
     ></div>
 
-    <div class="container container-fixed-centered" :class="{ hide: !confirm }">
+    <div class="container container-fixed-centered" v-if="isAdmin" :class="{ hide: !confirm }">
+      <div class="card text-center shadow">
+        <h2 class="card-header">{{ wish.item }}</h2>
+        <div class="card-body" v-if="!booked">
+          <p v-if="wish.specification">
+            <span v-if="wish.amount!=100">Specifikation: &nbsp;</span>
+            <strong v-if="wish.amount!=100">{{ wish.specification }}</strong>
+            <span v-else>{{ wish.specification}}</span>
+          </p>
+          <p v-show="wish.link">
+            <a :href="wish.link" target="_blank">Länk</a>
+          </p>
+          <p v-if="wish.amount!=100">
+            Antal önskade:
+            <strong>{{ wish.amount }} st</strong>
+          </p>
+          <div>
+            <button class="btn btn-secondary" @click="confirm = false">Avbryt</button>
+          </div>
+        </div>
+        <div class="card-body" v-else>
+          <h2>Tack för din bokning!</h2>
+          <br />
+          <p>
+            Du har bokat
+            <strong>
+              {{ wish.bookingAmount }}
+              st
+            </strong>
+            av önskesaken
+            <strong>{{ wish.item }}</strong>.
+          </p>
+          <p>
+            Om någonting blev fel eller om du har en fråga går det bra att höra av sig till
+            <router-link :to="{ name: 'contact' }">värdarna</router-link>&nbsp; så hjälper de dig.
+            Tack!
+          </p>
+          <br />
+          <button
+            class="btn btn-primary btn-custom"
+            @click="
+              hideWish();
+              confirm = false;
+            "
+          >Tillbaka till önskelistan</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-fixed-centered" v-else :class="{ hide: !confirm }">
       <div class="card text-center shadow">
         <h2 class="card-header">{{ wish.item }}</h2>
         <div class="card-body" v-if="!booked">
