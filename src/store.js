@@ -118,6 +118,7 @@ export default new Vuex.Store({
             item: wish.item,
             amount: Number(wish.amount),
             specification: wish.specification,
+            imagelink: wish.imagelink,
             link: wish.link
           });
         router.push({ name: "wishlist" });
