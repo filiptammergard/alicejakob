@@ -64,10 +64,13 @@
                   <h2>Klädsel</h2>
                 </td>
                 <td>
-                  <h2>Festfin</h2>
+                  <h2>Festfin*</h2>
                 </td>
               </tr>
             </table>
+            <p
+              style="font-size:0.7rem;"
+            >* Kom i det du känner dig fin och bekväm i! Exempelvis längd på kläddning spelar ingen roll för oss. Undvik gärna starka dofter med anledning av allergi.</p>
           </div>
         </div>
       </div>

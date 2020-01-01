@@ -6,11 +6,7 @@
           <div class="col-md-6"></div>
           <div class="col-md-6 text-right">
             <h1>Välkommen!</h1>
-            <p>
-              Välkommen till Alice &amp; Jakobs bröllopshemsida. Här kan du se informaiton som kan
-              vara bra att hålla koll på och även anmäla dig till bröllopet eller anmäla att du vill
-              hålla tal eller spexa på festen.
-            </p>
+            <p>Välkommen till Alice &amp; Jakobs bröllopshemsida.</p>
             <p>Skrolla ner för att logga in!</p>
           </div>
         </div>
@@ -23,9 +19,9 @@
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <h2>Logga in</h2>
+            <p>Alla som vill är välkomna att närvara vid vigseln.</p>
             <p>
-              För att få tillgång till hemsidan behöver du ange lösenordet som står på inbjudan till
-              bröllopet. Om du har tappat bort inbjudan kan du mejla
+              Du som har fått en inbjudan till bröllopet i brevlådan kan logga in med lösenordet som står på inbjudan för att få tillgång till mer information. Om du har tappat bort inbjudan kan du mejla
               <a
                 href="mailto:brudparet@aliceochjakob.se"
               >brudparet@aliceochjakob.se</a> för att få

@@ -14,7 +14,7 @@
             <h2>Danmarks kyrka</h2>
             <p>Tid: 14.30</p>
             <p>Adress: Danmarks kyrkby, Uppsala</p>
-            <p>Danmarks kyrka ligger 8 km söder om Uppsala intill motorvägen mot Stockholm. Vid kyrkan finns det parkering och vill man komma med buss finns en busshållplats alldeles intill kyrkan.</p>
+            <p>Alla som vill är välkomna att närvara vid vigseln i Danmarks kyrka som ligger 8 km söder om Uppsala intill motorvägen mot Stockholm. Vid kyrkan finns det parkering och vill man komma med buss finns en busshållplats alldeles intill kyrkan.</p>
           </div>
         </div>
       </div>
