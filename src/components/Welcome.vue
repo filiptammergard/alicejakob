@@ -70,7 +70,7 @@
             </table>
             <p
               style="font-size:0.7rem;"
-            >* Kom i det du känner dig fin och bekväm i! Exempelvis längd på kläddning spelar ingen roll för oss. Undvik gärna starka dofter med anledning av allergi.</p>
+            >* Kom i det du känner dig fin och bekväm i! Exempelvis spelar längd på kläddning ingen roll för oss. Undvik gärna starka dofter med anledning av allergi.</p>
           </div>
         </div>
       </div>
@@ -86,13 +86,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .glow {
-//   color: black;
-//   text-shadow: 0 0 20px #bfdbf1, 0 0 30px #bfdbf1, 0 0 40px #bfdbf1,
-//     0 0 50px #bfdbf1, 0 0 60px #bfdbf1, 0 0 70px #bfdbf1, 0 0 80px #bfdbf1,
-//     0 0 90px #bfdbf1, 0 0 100px #bfdbf1;
-// }
-
 .glow {
   color: black;
   text-shadow: 0 0 20px #bfdbf1, 0 0 30px #bfdbf1, 0 0 40px #bfdbf1;
