@@ -4,6 +4,10 @@
       <div class="container">
         <h1>Hitta</h1>
         <p>Vigseln är i Danmarks kyrka och bröllopsfesten på Marma Gård. Nedan hittar du adresserna och enklare vägbeskrivningar.</p>
+        <p>
+          Hör av dig till
+          <router-link :to="{ name: 'contact' }">brudparet</router-link>&nbsp;om du behöver hjälp med skjuts så ska vi nog kunna lösa det.
+        </p>
       </div>
     </section>
 
