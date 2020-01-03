@@ -70,7 +70,7 @@
             </table>
             <p
               style="font-size:0.7rem;"
-            >* Kom i det du känner dig fin och bekväm i! Exempelvis spelar längd på kläddning ingen roll för oss. Undvik gärna starka dofter med anledning av allergi.</p>
+            >* Kom i det du känner dig fin och bekväm i! Exempelvis spelar längd på klänning ingen roll för oss. Undvik gärna starka dofter med anledning av allergi.</p>
           </div>
         </div>
       </div>
