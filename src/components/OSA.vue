@@ -3,10 +3,10 @@
     <section class="white d-flex align-items-center">
       <div class="container">
         <div class="align-self-center">
-          <h1>O.S.A</h1>
+          <h1>O.S.A.</h1>
           <p>
             I det här formuläret kan du som har fått en inbjudan i brevlådan meddela om du kan komma eller inte på bröllopsfesten. Det går också bra att anmäla dig eller meddela att du inte kan komma genom att höra av dig till värdarna på annat sätt, se kontaktuppgifter i fliken
-            <router-link :to="{ name: 'contact' }">Kontakt</router-link>.
+            <router-link :to="{ name: 'contact' }">Kontakt</router-link>. O.S.A. senast 1 juni.
           </p>
         </div>
       </div>
