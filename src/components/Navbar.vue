@@ -15,7 +15,7 @@
           <i class="fas fa-list-ul"></i>
         </router-link>
         <router-link :to="{ name: 'osa' }">
-          <span>O.S.A</span>
+          <span>O.S.A.</span>
           <i class="fas fa-paper-plane"></i>
         </router-link>
         <router-link :to="{ name: 'contact' }">
