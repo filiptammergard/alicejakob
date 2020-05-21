@@ -94,10 +94,11 @@
           <p>
             Hej kära familj och vänner! Om mindre tre månader ska vi äntligen få säga JA till
             varandra! Vi vill dela med er om hur våra tankar går med avseende på den rådande
-            situationen med Covid-19. Meddelandet finns
+            situationen med Covid-19. <br /><br />
+            Meddelandet finns
             <a href="#corona-component" @click="hideCoronaMessagePopUp()"
               >längst ner på den här sidan</a
-            >. Hälsningar, Alice och Jakob
+            >.<br /><br />
           </p>
           <div>
             <button class="btn btn-secondary" @click="hideCoronaMessagePopUp()">Avbryt</button>
