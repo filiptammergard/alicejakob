@@ -4,13 +4,13 @@
       <div class="container">
         <h2>Corona-meddelande</h2>
         <p>
-          Hej kära familj och vänner! Om mindre tre månader ska vi äntligen få säga JA till
-          varandra! Vi vill dela med er om hur våra tankar går med avseende på den rådande
-          situationen med Covid-19. När vi skickade ut inbjudningarna för tre månader sen visste vi
-          knappt vad corona var. Nu är det något som påverkar allas vår vardag. Det kommer med
-          största sannolikhet också påverka hur vi kommer kunna utforma vårt bröllop den 1 augusti.
-          I dagsläget är det exempelvis inte tillåtet eller lämpligt för oss att ha en bröllopsfest
-          i den utformningen vi hade planerat.<br />
+          Hej kära familj och vänner! Snart ska vi äntligen få säga JA till varandra! Vi vill dela
+          med er om hur våra tankar går med avseende på den rådande situationen med Covid-19. När vi
+          skickade ut inbjudningarna för tre månader sen visste vi knappt vad corona var. Nu är det
+          något som påverkar allas vår vardag. Det kommer med största sannolikhet också påverka hur
+          vi kommer kunna utforma vårt bröllop den 1 augusti. I dagsläget är det exempelvis inte
+          tillåtet eller lämpligt för oss att ha en bröllopsfest i den utformningen vi hade
+          planerat.<br />
           Samtidigt är det nästan tre månader kvar och vi hoppas fortfarande att vi kommer kunna ha
           bröllopsfesten som planerat med alla er där. Om det inte blir fallet kommer vi utforma
           vårt bröllop på ett annat sätt och göra det så bra vi kan utifrån förutsättningarna och
