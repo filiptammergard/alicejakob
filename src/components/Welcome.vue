@@ -10,11 +10,12 @@
               Hej och välkommen till vår bröllopshemsida! Den 1 augusti 2020 ska vi säga JA till
               varandra och vi hoppas att ni vill dela denna dag med oss! På den här hemsidan finns
               förhoppningsvis allt ni behöver veta inför bröllopet, här kan ni exempelvis
-              <router-link :to="{ name: 'osa'}">anmäla er till bröllopsfesten</router-link>,
-              <router-link :to="{ name: 'find'}">få hjälp att hitta till vigsel och fest</router-link>&nbsp;och
-              <router-link :to="{ name: 'contact'}">
-                anmäla om ni vill bidra
-                genom tal eller liknande på bröllopsfesten.
+              <router-link :to="{ name: 'osa' }">anmäla er till bröllopsfesten</router-link>,
+              <router-link :to="{ name: 'find' }"
+                >få hjälp att hitta till vigsel och fest</router-link
+              >&nbsp;och
+              <router-link :to="{ name: 'contact' }">
+                anmäla om ni vill bidra genom tal eller liknande på bröllopsfesten.
               </router-link>
             </p>
           </div>
@@ -68,20 +69,64 @@
                 </td>
               </tr>
             </table>
-            <p
-              style="font-size:0.7rem;"
-            >* Kom i det du känner dig fin och bekväm i! Exempelvis spelar längd på klänning ingen roll för oss. Undvik gärna starka dofter med anledning av allergi.</p>
+
+            <p style="font-size:0.7rem;">
+              * Kom i det du känner dig fin och bekväm i! Exempelvis spelar längd på klänning ingen
+              roll för oss. Undvik gärna starka dofter med anledning av allergi.
+            </p>
           </div>
         </div>
       </div>
       <div class="col-md-6 section-image3"></div>
     </section>
+
+    <div
+      class="opacity-overlay"
+      @click="hideCoronaMessagePopUp()"
+      :class="{ show: coronaMessageVisible }"
+    ></div>
+
+    <div class="container container-fixed-centered" :class="{ hide: !coronaMessageVisible }">
+      <div class="card text-center shadow">
+        <h2 class="card-header">Corona-meddelande</h2>
+
+        <div class="card-body">
+          <p>
+            Hej kära familj och vänner! Om mindre tre månader ska vi äntligen få säga JA till
+            varandra! Vi vill dela med er om hur våra tankar går med avseende på den rådande
+            situationen med Covid-19. När vi skickade ut inbjudningarna för tre månader sen visste
+            vi knappt vad corona var. Nu är det något som påverkar allas vår vardag. Det kommer med
+            största sannolikhet också påverka hur vi kommer kunna utforma vårt bröllop den 1
+            augusti. I dagsläget är det exempelvis inte tillåtet eller lämpligt för oss att ha en
+            bröllopsfest i den utformningen vi hade planerat. Samtidigt är det nästan tre månader
+            kvar och vi hoppas fortfarande att vi kommer kunna ha bröllopsfesten som planerat med
+            alla er där. Om det inte blir fallet kommer vi utforma vårt bröllop på ett annat sätt
+            och göra det så bra vi kan utifrån förutsättningarna och vad som känns rätt för oss.
+            Oavsett kommer vi ta ett beslut och informera er senast i början av juni, när vi vet mer
+            om läget och myndigheter har kommit ut med mer information och riktlinjer. Vi skjuter
+            därmed också upp OSA datum till den 15e juni. Ta hand om er! <br /><br />
+            Hälsningar, Alice och Jakob
+          </p>
+          <div>
+            <button class="btn btn-secondary" @click="hideCoronaMessagePopUp()">Avbryt</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default {
-  name: "welcome-component"
+  name: "welcome-component",
+  computed: {
+    ...mapState(["coronaMessageVisible"]),
+  },
+  methods: {
+    ...mapActions(["hideCoronaMessagePopUp"]),
+  },
 };
 </script>
 

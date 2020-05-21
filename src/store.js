@@ -19,7 +19,9 @@ export default new Vuex.Store({
 
     wishes: [],
 
-    booked: false
+    booked: false,
+
+    coronaMessageVisible: false,
   },
   mutations: {
     getWishes(state, wishes) {
@@ -35,7 +37,12 @@ export default new Vuex.Store({
         state.booked = false;
       }, 300);
     },
-
+    hideCoronaMessagePopUp(state) {
+      state.coronaMessageVisible = false;
+    },
+    showCoronaMessagePopUp(state) {
+      state.coronaMessageVisible = true;
+    },
     updateWishes(state, wishes) {
       state.wishes = wishes;
     },
@@ -46,15 +53,15 @@ export default new Vuex.Store({
       setTimeout(() => {
         state.booked = false;
       }, 300);
-    }
+    },
   },
   actions: {
     getWishes({ commit }) {
       db.collection("wishes")
         .orderBy("order")
-        .onSnapshot(querySnapshot => {
+        .onSnapshot((querySnapshot) => {
           let wishes = [];
-          querySnapshot.forEach(doc => {
+          querySnapshot.forEach((doc) => {
             wishes.push({
               id: doc.id,
               item: doc.data().item,
@@ -64,7 +71,7 @@ export default new Vuex.Store({
               given: doc.data().given,
               order: doc.data().order,
               bookingAmount: 1,
-              imagelink: doc.data().imagelink
+              imagelink: doc.data().imagelink,
             });
           });
           commit("getWishes", wishes);
@@ -74,7 +81,7 @@ export default new Vuex.Store({
       db.collection("wishes")
         .orderBy("order")
         .get()
-        .then(querySnapshot => {
+        .then((querySnapshot) => {
           if (querySnapshot.docs.length) {
             db.collection("wishes")
               .add({
@@ -84,7 +91,7 @@ export default new Vuex.Store({
                 link: wish.link,
                 imagelink: wish.imagelink,
                 order: querySnapshot.docs[querySnapshot.docs.length - 1].data().order + 1,
-                given: 0
+                given: 0,
               })
               .then(router.push({ name: "wishlist" }));
           } else {
@@ -96,7 +103,7 @@ export default new Vuex.Store({
                 link: wish.link,
                 imagelink: wish.imagelink,
                 order: 0,
-                given: 0
+                given: 0,
               })
               .then(router.push({ name: "wishlist" }));
           }
@@ -107,7 +114,7 @@ export default new Vuex.Store({
         .collection("wishes")
         .doc(router.currentRoute.params.id)
         .get()
-        .then(doc => {
+        .then((doc) => {
           return doc.data().given;
         });
 
@@ -119,7 +126,7 @@ export default new Vuex.Store({
             amount: Number(wish.amount),
             specification: wish.specification,
             imagelink: wish.imagelink,
-            link: wish.link
+            link: wish.link,
           });
         router.push({ name: "wishlist" });
       } else {
@@ -135,7 +142,7 @@ export default new Vuex.Store({
         .collection("wishes")
         .doc(router.currentRoute.params.id)
         .get()
-        .then(doc => {
+        .then((doc) => {
           return doc.data();
         });
       if (
@@ -151,8 +158,8 @@ export default new Vuex.Store({
           .where("order", ">", wish.order)
           .orderBy("order")
           .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
               db.collection("wishes")
                 .doc(doc.id)
                 .update({ order: doc.data().order - 1 });
@@ -167,6 +174,12 @@ export default new Vuex.Store({
     hideWish({ commit }) {
       commit("hideWish");
     },
+    hideCoronaMessagePopUp({ commit }) {
+      commit("hideCoronaMessagePopUp");
+    },
+    showCoronaMessagePopUp({ commit }) {
+      commit("showCoronaMessagePopUp");
+    },
     bookWish(context, wish) {
       db.collection("wishes")
         .doc(wish.id)
@@ -176,7 +189,7 @@ export default new Vuex.Store({
         .collection("bookings")
         .add({
           booking_amount: Number(wish.bookingAmount),
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
       context.commit("bookedTrue");
     },
@@ -187,8 +200,8 @@ export default new Vuex.Store({
       db.collection("wishes")
         .orderBy("order")
         .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
             if (e.newIndex > e.oldIndex) {
               if (doc.data().order == e.oldIndex) {
                 db.collection("wishes")
@@ -212,6 +225,6 @@ export default new Vuex.Store({
             }
           });
         });
-    }
-  }
+    },
+  },
 });

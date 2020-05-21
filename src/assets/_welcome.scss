@@ -74,4 +74,31 @@
       transform: translateY(-5px);
     }
   }
+
+  .opacity-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0);
+    @include ease-out();
+
+    &.show {
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+    }
+  }
+
+  .container-fixed-centered {
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .hide {
+    display: none;
+  }
 }
