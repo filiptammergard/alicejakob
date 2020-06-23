@@ -11,12 +11,10 @@
               varandra och vi hoppas att ni vill dela denna dag med oss! På den här hemsidan finns
               förhoppningsvis allt ni behöver veta inför bröllopet, här kan ni exempelvis
               <router-link :to="{ name: 'osa' }">anmäla er till bröllopsfesten</router-link>,
-              <router-link :to="{ name: 'find' }"
-                >få hjälp att hitta till vigsel och fest</router-link
-              >&nbsp;och
-              <router-link :to="{ name: 'contact' }">
-                anmäla om ni vill bidra genom tal eller liknande på bröllopsfesten.
-              </router-link>
+              <router-link :to="{ name: 'find' }">få hjälp att hitta till vigsel och fest</router-link>&nbsp;och
+              <router-link
+                :to="{ name: 'contact' }"
+              >anmäla om ni vill bidra genom tal eller liknande på bröllopsfesten.</router-link>
             </p>
           </div>
         </div>
@@ -94,11 +92,14 @@
           <p>
             Hej kära familj och vänner! Snart ska vi äntligen få säga JA till varandra! Vi vill dela
             med er om hur våra tankar går med avseende på den rådande situationen med Covid-19.
-            <br /><br />
-            Meddelandet finns
-            <a href="#corona-component" @click="hideCoronaMessagePopUp()"
-              >längst ner på den här sidan</a
-            >.<br /><br />
+            <br />
+            <br />Meddelandet finns
+            <a
+              href="#corona-component"
+              @click="hideCoronaMessagePopUp()"
+            >längst ner på den här sidan</a>.
+            <br />
+            <br />
           </p>
           <div>
             <button class="btn btn-secondary" @click="hideCoronaMessagePopUp()">Avbryt</button>
@@ -115,11 +116,11 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "welcome-component",
   computed: {
-    ...mapState(["coronaMessageVisible"]),
+    ...mapState(["coronaMessageVisible"])
   },
   methods: {
-    ...mapActions(["hideCoronaMessagePopUp"]),
-  },
+    ...mapActions(["hideCoronaMessagePopUp"])
+  }
 };
 </script>
 

@@ -17,17 +17,14 @@ import Navbar from "./components/Navbar";
 export default {
   name: "app",
   components: {
-    Navbar,
+    Navbar
   },
   created() {
     this.getWishes();
-    setTimeout(() => {
-      this.showCoronaMessagePopUp();
-    }, 2000);
   },
   methods: {
-    ...mapActions(["getWishes", "showCoronaMessagePopUp"]),
-  },
+    ...mapActions(["getWishes", "showCoronaMessagePopUp"])
+  }
 };
 </script>
 
